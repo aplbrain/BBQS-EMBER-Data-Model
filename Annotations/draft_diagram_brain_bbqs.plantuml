@@ -1,0 +1,61 @@
+@startuml Metadata
+'   BIDS x EMBER 
+'   EMBER BBQS Diagram, https://github.com/aplbrain/EMBER
+title Imaging Metadata Version 1.1
+
+'   -----------------------------
+'   Layout directives
+'   -----------------------------
+
+'   Grouping
+
+
+'   Formatting for readability
+'   Splitting into four pages
+page 2x2
+skinparam pageMargin 10
+skinparam pageBorderColor black
+skinparam pageBorderColor gray 
+
+'   ------------------------------
+'   Primary Classes
+'   ------------------------------
+
+'
+'   Project:
+'   Type 
+'   Link
+'   PoP years (max)
+'   Award # 
+'   Title
+'   PI Name
+'   PI Email
+'   Human/Animal
+'   Species (Regular)
+'   Species (Scientific Name)
+'   Sensors
+'   DataModalities 
+'   Approaches 
+'   DataGeneration Sort
+'   Program Official
+'   Organization
+
+class Project {
+  *Type:               String
+  *Link:             String 
+  *PoP years (max):             String 
+  *Award # :             String 
+  *PI Name:             String 
+  *PI Email:             String 
+  *Human/Animal:             String 
+  *Species (Regular):             String 
+  *Species (Scientific Name):             String 
+  *Sensors:               String
+  *DataModalities:             String 
+  *Approaches:               String
+  *DataGeneration Sort:             String 
+  *Program Official:               String
+  *Organization:               String
+
+}
+@enduml
