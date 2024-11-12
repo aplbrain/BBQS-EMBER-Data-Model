@@ -1,7 +1,7 @@
 @startuml Metadata
 '   BIDS x EMBER 
 '   EMBER BBQS Diagram, https://github.com/aplbrain/EMBER
-title Imaging Metadata Version 1.1
+title BIDS x EMBER Annotations
 
 '   -----------------------------
 '   Layout directives
