@@ -1,0 +1,88 @@
+@startuml Metadata
+' EMBER x BIDS x DANDI Integration
+title EMBER x BIDS x DANDI Metadata Relationships
+
+' Layout and appearance settings
+page 2x2
+skinparam pageMargin 10
+skinparam pageBorderColor black
+skinparam pageBorderColor gray
+
+' Core Classes
+class EMBERProject {
+  +Type:               String
+  +Link:               String
+  +PoP years (max):    String
+  +Award #:            String
+  +Title:              String
+  +PI Name:            String
+  +PI Email:           String
+  +Human/Animal:       String
+  +Species (Regular):  String
+  +Species (Scientific Name): String
+  +Sensors:            String
+  +DataModalities:     String
+  +Approaches:         String
+  +DataGeneration Sort: String
+  +Program Official:   String
+  +Organization:       String
+}
+
+class BIDS {
+  +DatasetType:          String
+  +Authors:              List<String>
+  +Funding:              String
+  +Species:              String
+  +Devices:              String
+  +Tasks:                List<String>
+  +ModalitySpecific:     JSON/TSV
+  +Participant Info:     participants.tsv
+  +Dataset Description:  dataset_description.json
+}
+
+class DANDI {
+  +Identifier:           String
+  +DOI:                  String
+  +Funding:              String
+  +Keywords:             List<String>
+  +DatasetType:          String
+  +Contributor:          String
+  +Metadata Format:      NWB/PsychDS
+}
+
+' Relationships
+EMBERProject --> BIDS : Maps metadata fields
+BIDS --> DANDI : Extends with additional metadata
+
+' BIDS Integration
+class BIDSParticipants {
+  +Participant_ID:    String
+  +Age:               Integer
+  +Sex:               String
+  +Human/Animal:      String
+}
+class BIDSSession {
+  +Session_ID:        String
+  +Tasks:             List<String>
+  +Modality_Files:    String
+}
+class BIDSModality {
+  +Modality:          String
+  +Filename_Template: String
+  +Metadata:          JSON/TSV
+}
+
+BIDS --> BIDSParticipants : Includes
+BIDS --> BIDSSession : Organizes by sessions
+BIDS --> BIDSModality : Links raw data to metadata
+
+' DANDI-Specific Metadata
+class DANDIMetadata {
+  +Identifier:        String
+  +DOI:               String
+  +RelatedProjects:   List<String>
+  +File_Format:       NWB
+  +Keywords:          List<String>
+}
+
+DANDI --> DANDIMetadata : Stores metadata standards
