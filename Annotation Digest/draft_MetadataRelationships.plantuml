@@ -26,7 +26,64 @@ class EMBERProject {
   +DataGeneration Sort: String
   +Program Official:   String
   +Organization:       String
+--
+EMBERMetadata:
+  +Identifier:        String
+  +Metadata_Fields:   List<String>
 }
+
+class EMBERPHI_PII {
+  +Identifier:        String
+  +PII_Fields:        List<String>
+  +Privacy_Level:     String
+}
+
+class DANDI {
+  +Format:      NWB, BIDS or DANDIsetMetadata
+  ---
+  +Identifier:           String
+  +DOI:                  String
+  +Funding:              String
+  +Keywords:             List<String>
+  +DatasetType:          String
+  +Contributor:          String
+}
+
+' DANDI-Specific Metadata from here: https://www.dandiarchive.org/handbook/136_metadata/
+class DANDIsetMetadata {
+  +General:               String
+  +Contributors:          List<String>
+  +SubjectMatter:         String
+  +EthicsApprovals:       NWB
+  +Links:                 String
+}
+
+class DABI {
+  +Format:  NWB, BIDS, or Subject
+  ---
+   +DatasetType:          String
+  +Authors:              List<String>
+  +Funding:              String
+  +Species:              String
+  +Devices:              String
+  +Tasks:                List<String>
+  +ModalitySpecific:     JSON/TSV
+  +Participant Info:     participants.tsv
+  +Dataset Description:  dataset_description.json
+}
+
+ class Subject {
+  Subject:              
+    +Imaging:             String
+    +Electrophysiology:   String
+    +Behavioral:          String
+    +Stimuli:             String
+    +Wearable Devices:    String
+    +Participants:        String
+    +Session Info:        String
+    +Raw Data Storage:    Directory Tree
+    +Derived Data:        Processed Files
+    }
 
 class BIDS {
   +DatasetType:          String
@@ -38,51 +95,6 @@ class BIDS {
   +ModalitySpecific:     JSON/TSV
   +Participant Info:     participants.tsv
   +Dataset Description:  dataset_description.json
-}
-
-class EMBERPHI_PII {
-  +Identifier:        String
-  +PII_Fields:        List<String>
-  +Privacy_Level:     String
-}
-
-class EMBERMetadata {
-  +Identifier:        String
-  +Metadata_Fields:   List<String>
-}
-
-class DANDI {
-  +Metadata Format:      NWB, BIDS, or Niether
-  +Identifier:           String
-  +DOI:                  String
-  +Funding:              String
-  +Keywords:             List<String>
-  +DatasetType:          String
-  +Contributor:          String
-}
-
-' DANDI-Specific Metadata from here: https://www.dandiarchive.org/handbook/136_metadata/
-class DANDIMetadata {
-  +General:               String
-  +Contributors:          List<String>
-  +SubjectMatter:         String
-  +EthicsApprovals:       NWB
-  +Links:                 String
-}
-
-class DABI {
-  +Metadata Format:      NWB, BIDS, or Subject
-  ---
-  +Subject:              
-    +Imaging:             String
-    +Electrophysiology:   String
-    +Behavioral:          String
-    +Stimuli:             String
-    +Wearable Devices:    String
-    +Participants:        String
-    +Session Info:        String
-    +Raw Data Storage:    Directory Tree
-    +Derived Data:        Processed Files
 }
 
 ' BIDS Integration
@@ -103,17 +115,26 @@ class BIDSModality {
   +Metadata:          JSON/TSV
 }
 
+' https://nwb-schema.readthedocs.io/en/stable/
+class NWB {
+  +Group:
+  +Dataset:
+  +Attribute:
+  +Link:
+}
+
 
 EMBERProject --> EMBERPHI_PII : Contains PHI/PII data
 EMBERProject --> DANDI : Shares metadata
 EMBERProject --> DABI : Shares metadata
-EMBERPHI_PII <--> EMBERMetadata : Associated with metadata
 
 DANDI --> BIDS : Extends with additional metadata
-DANDI --> EMBERMetadata : Associated with metadata
-DANDI --> DANDIMetadata : Contains metadata standards
+DANDI --> DANDIsetMetadata : Contains metadata standards
+DANDI --> NWB : Integrates with NWB
 
 DABI --> BIDS : Integrates with BIDS
+DABI --> NWB : Integrates with NWB
+DABI --> Subject : Integrates with NWB
 
 BIDS --> BIDSParticipants : Includes participant data
 BIDS --> BIDSSession : Organizes by session data
