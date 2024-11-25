@@ -40,6 +40,17 @@ class BIDS {
   +Dataset Description:  dataset_description.json
 }
 
+class EMBERPHI_PII {
+  +Identifier:        String
+  +PII_Fields:        List<String>
+  +Privacy_Level:     String
+}
+
+class EMBERMetadata {
+  +Identifier:        String
+  +Metadata_Fields:   List<String>
+}
+
 class DANDI {
   +Identifier:           String
   +DOI:                  String
@@ -50,9 +61,15 @@ class DANDI {
   +Metadata Format:      NWB/PsychDS
 }
 
-' Relationships
-EMBERProject --> BIDS : Maps metadata fields
-BIDS --> DANDI : Extends with additional metadata
+class DABI {
+  +Identifier:           String
+  +DOI:                  String
+  +Funding:              String
+  +Keywords:             List<String>
+  +DatasetType:          String
+  +Contributor:          String
+  +Metadata Format:      NWB/PsychDS
+}
 
 ' BIDS Integration
 class BIDSParticipants {
@@ -85,4 +102,18 @@ class DANDIMetadata {
   +Keywords:          List<String>
 }
 
-DANDI --> DANDIMetadata : Stores metadata standards
+EMBERProject --> EMBERPHI_PII : Contains PHI/PII data
+EMBERProject --> DANDI : Shares metadata
+EMBERProject --> DABI : Shares metadata
+EMBERPHI_PII <--> EMBERMetadata : Associated with metadata
+
+DANDI --> BIDS : Extends with additional metadata
+DANDI --> EMBERMetadata : Associated with metadata
+DANDI --> DANDIMetadata : Contains metadata standards
+
+DABI --> BIDS : Integrates with BIDS
+
+BIDS --> BIDSParticipants : Includes participant data
+BIDS --> BIDSSession : Organizes by session data
+BIDS --> BIDSModality : Links raw data to metadata
+
