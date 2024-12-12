@@ -1,6 +1,6 @@
 # EMBER x BIDS x DANDI x DABI Metadata Relationships
 
-![Ember Relationship Diagram](/Users/guittnk3/Documents/GitHub/BBQS-EMBER/Annotation Digest/EmberRelationshipDiagram.png)
+![Ember Relationship Diagram](EmberRelationshipDiagram.png)
 
 
 This repository contains a PlantUML diagram that visualizes the integration of Ecosystem for Multi-modal Brain-behavior Experimentation and Research (EMBER), Brain Imaging Data Structure (BIDS), Distributed Archives for Neurophysiology Data Integration (DANDI), and Data Archive for the BRAIN Initiative (DABI) metadata for neuroimaging and behavioral data management. 
