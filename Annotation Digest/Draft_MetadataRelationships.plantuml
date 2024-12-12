@@ -1,0 +1,173 @@
+@startuml Metadata
+' EMBER x BIDS x DANDI x DABI Integration
+title Draft EMBER x BIDS x DANDI x DABI Metadata Relationships
+
+' Layout and appearance settings
+page 2x2
+skinparam pageMargin 10
+skinparam pageBorderColor black
+skinparam pageBorderColor gray
+
+' Core Classes
+class EMBERProject {
+  +Type:               String
+  +Link:               String
+  +PoP years (max):    String
+  +Award #:            String
+  +Title:              String
+  +PI Name:            String
+  +PI Email:           String
+  +Human/Animal:       String
+  +Species (Regular):  String
+  +Species (Scientific Name): String
+  +Sensors:            String
+  +DataModalities:     String
+  +Approaches:         String
+  +DataGeneration Sort: String
+  +Program Official:   String
+  +Organization:       String
+--
+EMBER Metadata:
+  +Identifier:        String
+  +Metadata_Fields:   List<String>
+}
+
+class EMBERPHI_PII {
+  +Identifier:        String
+  +PII_Fields:        List<String>
+  +Privacy_Level:     String
+}
+
+class DANDI {
+   Standards:  
+  +NWB
+  +BIDS
+  ---
+  +DANDIsetMetadata
+  +General:               String
+  +Contributors:          List<String>
+  +SubjectMatter:         String
+  +EthicsApprovals:       NWB
+  +Links:                 String
+}
+
+' DANDI-Specific Metadata from here: https://www.dandiarchive.org/handbook/136_metadata/
+
+
+class DABI {
+  Standards:  
+  +NWB
+  +BIDS
+  +Subject
+}
+
+ class Subject {
+  Subject:
+    +Imaging:             Data streams from modalities like MRI, CT, PET, and fMRI
+    +Electrophysiology:   Recordings from modalities like ECoG, DBS, and LFP
+    +Behavioral:          Behavioral experiment data
+    +Stimuli:             Stimulus presentations (e.g., images, events)
+    +Wearable Devices:    Data from wearable sensors or devices
+    +Participants:        Participant-related metadata
+    +Session Info:        Session-specific data
+    +Raw Data Storage:    Organized directory of raw data files
+    +Derived Data:        Processed or analyzed files
+}
+
+class BIDS {
+  +DatasetType:          String
+  +BIDSVersion:          String
+  +Name:                 String
+  +License:              String
+  +Authors:              List<String>
+  +Funding:              List<String>
+  +EthicsApprovals:      List<String>
+  +SupportedModalities:  List<String>
+  +ParticipantsFile:     TSV/JSON
+  +ScansFile:            TSV/JSON
+  +SessionsFile:         TSV/JSON
+  +PhenotypicData:       TSV/JSON
+  +DatasetDescription:   JSON
+  +Readme:               Markdown/Text
+  +Citation:             CFF/JSON
+  +Code:                 Directory
+}
+
+' BIDS Integration
+class BIDSParticipants {
+  +Participant_ID:    String
+  +Age:               Integer
+  +Sex:               String
+  +Human/Animal:      String
+}
+class BIDSSession {
+  +Session_ID:        String
+  +Tasks:             List<String>
+  +Modality_Files:    String
+}
+class BIDSModality {
+  +Modality:          String
+  +Filename_Template: String
+  +Metadata:          JSON/TSV
+}
+
+' https://nwb-schema.readthedocs.io/en/stable/
+class NWB {
+  +Group:             List<String>
+  +Dataset:           List<String>
+  +Attribute:         List<String>
+  +Link:              List<String>
+}
+ 
+class Group {
+  +Acquisition:       Data streams recorded from the system
+  +Intervals:         Experimental intervals
+  +Stimulus:          Stimulus data
+  +General:           Experimental metadata
+  +Processing:        Intermediate analysis data
+  +Analysis:          Lab-specific and custom analysis
+}
+
+class Dataset {
+  +Description:       Basic description of the dataset type
+  +Organization:      Organization of data within the type
+  +Tables:            Contained datasets, attributes, and groups
+  +Subsections:       Optional content of subgroups
+  ---
+  +Name:              Unique name of the object
+  +Neurodata_Type:    If object has no unique name
+  +Depth:             Prefixes (e.g., `—`) indicate hierarchy
+}
+
+class Attribute {
+  +Neurodata_Type:    Name of the NWB primitive
+  +Namespace:         Namespace defining the type
+  +Object_ID:         UUID for the object (RFC 4122-compliant)
+}
+
+class Link {
+  +Soft Links:        References within the file
+  +Hard Links:        Avoided in NWB
+  +Dangling Links:    Occurs when target is removed/moved
+  }
+
+' Relationships
+EMBERProject --> EMBERPHI_PII : Contains PHI/PII data
+EMBERProject --> DANDI : Shares metadata
+EMBERProject --> DABI : Shares metadata
+
+DANDI --> BIDS : Extends with additional metadata
+DANDI --> NWB : Integrates with NWB
+
+DABI --> BIDS : Integrates with BIDS
+DABI --> NWB : Integrates with NWB
+DABI --> Subject : If not in BIDS or NWB, folders should be structured by subject format
+
+BIDS --> BIDSParticipants : Includes participant data
+BIDS --> BIDSSession : Organizes by session data
+BIDS --> BIDSModality : Links raw data to metadata
+
+NWB --> Group : Organized into main groups
+NWB --> Dataset : Describes datasets and types
+NWB --> Attribute : Includes required attributes
+NWB --> Link : Describes linking mechanisms
