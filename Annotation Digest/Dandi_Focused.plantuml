@@ -1,5 +1,5 @@
 @startuml Metadata
-title Draft EMBER x BIDS x NWB x DANDI x DABI Metadata Relationships
+title DANDI Focused Metadata Relationships
 
 ' Layout and appearance settings
 page 2x2
@@ -38,52 +38,25 @@ class EMBERPHI_PII {
 }
 
 class DANDI {
-   Standards:  
-  +NWB
-  +BIDS
-  ---
-  +DANDIsetMetadata
+  DANDIsetMetadata
   +General:               String
   +Contributors:          List<String>
   +SubjectMatter:         String
   +EthicsApprovals:       NWB
   +Links:                 String
-}
-
-class PydanticValidation {
+  --
+  PydanticValidation 
   +ValidateJSON:         String
   +EnsureSchemaCompliance: String
-}
-
-' Pydantic validation stems from DANDI
-DANDI --> PydanticValidation : Uses for Schema Validation
-
-class DjangoRESTFramework {
+  ---
+ DjangoRESTFramework
   +RenderJSON:           String
   +ServeAPI:             String
-}
-
-' Django REST framework to serve data post-validation
-PydanticValidation --> DjangoRESTFramework : Validates and Forwards Data
-
-class DABI {
+  
+  ---
   Standards:  
   +NWB
   +BIDS
-  +Subject
-}
-
-class Subject {
-  Subject:
-    +Imaging:             Data streams from modalities like MRI, CT, PET, and fMRI
-    +Electrophysiology:   Recordings from modalities like ECoG, DBS, and LFP
-    +Behavioral:          Behavioral experiment data
-    +Stimuli:             Stimulus presentations (e.g., images, events)
-    +Wearable Devices:    Data from wearable sensors or devices
-    +Participants:        Participant-related metadata
-    +Session Info:        Session-specific data
-    +Raw Data Storage:    Organized directory of raw data files
-    +Derived Data:        Processed or analyzed files
 }
 
 class BIDS {
@@ -103,6 +76,10 @@ class BIDS {
   +Readme:               Markdown/Text
   +Citation:             CFF/JSON
   +Code:                 Directory
+  --
+BIDSParticipants : Includes participant data
+BIDSSession : Organizes by session data
+BIDSModality : Links raw data to metadata
 }
 
 class NWB {
@@ -110,58 +87,43 @@ class NWB {
   +Dataset:           List<String>
   +Attribute:         List<String>
   +Link:              List<String>
-}
-
-class Group {
+  ---
+  Group:
   +Acquisition:       Data streams recorded from the system
   +Intervals:         Experimental intervals
   +Stimulus:          Stimulus data
   +General:           Experimental metadata
   +Processing:        Intermediate analysis data
   +Analysis:          Lab-specific and custom analysis
-}
-
-class Dataset {
+---
+  Dataset: 
   +Description:       Basic description of the dataset type
   +Organization:      Organization of data within the type
   +Tables:            Contained datasets, attributes, and groups
   +Subsections:       Optional content of subgroups
-  ---
   +Name:              Unique name of the object
   +Neurodata_Type:    If object has no unique name
   +Depth:             Prefixes (e.g., `—`) indicate hierarchy
-}
-
-class Attribute {
+---
+Attribute:
   +Neurodata_Type:    Name of the NWB primitive
   +Namespace:         Namespace defining the type
   +Object_ID:         UUID for the object (RFC 4122-compliant)
-}
-
-class Link {
+--
+Link:
   +Soft Links:        References within the file
   +Hard Links:        Avoided in NWB
   +Dangling Links:    Occurs when target is removed/moved
 }
 
 ' Relationships
-EMBERProject --> EMBERPHI_PII : Contains PHI/PII data
-EMBERProject --> DANDI : Shares metadata
-EMBERProject --> DABI : Shares metadata
+EMBERProject --> EMBERPHI_PII : IRB/DUA compliant
+EMBERPHI_PII <--> DANDI : IRB or DUA supports PHI/PII Related Information stored in DANDI
+EMBERProject --> DANDI : Shares metadata (When data is fully public)
 
-DANDI --> BIDS : Extends with additional metadata
-DANDI --> NWB : Integrates with NWB
+' To organize into main groups, types, required attributes, and describe linking mechanisms with standards
+DANDI --> BIDS : Supported by BIDS 
+DANDI --> NWB : Supported by NWB 
+DANDI --> PyschDS : Supported by PyschDS 
 
-DABI --> BIDS : Integrates with BIDS
-DABI --> NWB : Integrates with NWB
-DABI --> Subject : If not in BIDS or NWB, folders should be structured by subject format
-
-BIDS --> BIDSParticipants : Includes participant data
-BIDS --> BIDSSession : Organizes by session data
-BIDS --> BIDSModality : Links raw data to metadata
-
-NWB --> Group : Organized into main groups
-NWB --> Dataset : Describes datasets and types
-NWB --> Attribute : Includes required attributes
-NWB --> Link : Describes linking mechanisms
 @enduml

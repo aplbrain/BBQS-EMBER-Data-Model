@@ -1,6 +1,6 @@
 # EMBER x DANDI x DABI x NWB x BIDS Metadata Relationships
 
-![Ember Relationship Diagram](EmberRelationshipDiagram.png)
+![Ember Relationship Diagram](MetadataOutline.png)
 
 
 This repository contains a PlantUML diagram that visualizes the integration of Ecosystem for Multi-modal Brain-behavior Experimentation and Research (EMBER), Distributed Archives for Neurophysiology Data Integration (DANDI), and Data Archive for the BRAIN Initiative (DABI), Brain Imaging Data Structure (BIDS), and Neurodata Without Borders (NWB) metadata for neuroimaging and behavioral data management. 
@@ -12,7 +12,6 @@ The diagram outlines the following key components:
 - **EMBERProject**: Metadata associated with projects, such as Principal Investigator (PI) details, species, sensors, and data modalities.
 - **EMBERPHI_PII**: Metadata containing personally identifiable information (PII) or protected health information (PHI).
 - **DANDI**: Metadata standards for managing and sharing neuroimaging datasets, including support for NWB and BIDS formats.
-- **DABI**: Metadata specific to experimental data organization, supporting standards like NWB and BIDS.
 - **BIDS**: Brain Imaging Data Structure, a standard for organizing neuroimaging and behavioral data.
 - **NWB**: Neurodata Without Borders, a standard for storing complex neurophysiology data.
 
@@ -62,11 +61,6 @@ The diagram outlines the following key components:
 | EthicsApprovals | String         | Ethics approvals for the dataset.               |
 | Links           | List<String>   | Links to related datasets or resources.         |
 
-## DABI
-| Attribute       | Data Type      | Description                                      |
-|-----------------|----------------|--------------------------------------------------|
-| Standards       | List<String>   | Supported standards, e.g., "BIDS", "NWB".       |
-| Metadata        | String         | Metadata structure used for DABI datasets.      |
 
 ## Subject
 | Attribute           | Data Type      | Description                                      |
