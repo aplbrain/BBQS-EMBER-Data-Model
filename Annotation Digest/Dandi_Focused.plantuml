@@ -57,7 +57,9 @@ class DANDI {
   Standards:  
   +NWB
   +BIDS
+  +Optional: PyschDS 
 }
+'Circle back to including PyschDS per recent conversations
 
 class BIDS {
   +DatasetType:          String
@@ -117,9 +119,12 @@ Link:
 }
 
 ' Relationships
-EMBERProject --> EMBERPHI_PII : IRB/DUA compliant
-EMBERPHI_PII <--> DANDI : IRB or DUA supports PHI/PII Related Information stored in DANDI
-EMBERProject --> DANDI : Shares metadata (When data is fully public)
+' EMBER Project = Centralized system 
+Portal <--> EMBERProject
+Portal <--> DANDI
+Portal <--> EMBERPHI_PII
+DANDI <--> EMBERProject : Shares metadata (When data is fully public)
+
 
 ' To organize into main groups, types, required attributes, and describe linking mechanisms with standards
 DANDI --> BIDS : Supported by BIDS 
