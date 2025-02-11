@@ -1,0 +1,135 @@
+@startuml Metadata
+title DANDI Focused Metadata Relationships
+
+' Layout and appearance settings
+page 2x2
+skinparam pageMargin 10
+skinparam pageBorderColor black
+skinparam pageBorderColor gray
+
+
+' Core Classes
+class EMBERProject {
+  +Type:               String
+  +Link:               String
+  +PoP years (max):    String
+  +Award #:            String
+  +Title:              String
+  +PI Name:            String
+  +PI Email:           String
+  +Human/Animal:       String
+  +Species (Regular):  String
+  +Species (Scientific Name): String
+  +Sensors:            String
+  +DataModalities:     String
+  +Approaches:         String
+  +DataGeneration Sort: String
+  +Program Official:   String
+  +Organization:       String
+--
+EMBER Metadata:
+  +Identifier:        String
+  +Metadata_Fields:   List<String>
+}
+
+class EMBERPHI_PII {
+  +Identifier:        String
+  +PII_Fields:        List<String>
+  +Privacy_Level:     String
+}
+
+class DANDI {
+  DANDIsetMetadata
+  +General:               String
+  +Contributors:          List<String>
+  +SubjectMatter:         String
+  +EthicsApprovals:       NWB
+  +Links:                 String
+  --
+  PydanticValidation 
+  +ValidateJSON:         String
+  +EnsureSchemaCompliance: String
+  ---
+ DjangoRESTFramework
+  +RenderJSON:           String
+  +ServeAPI:             String
+  
+  ---
+  Standards:  
+  +NWB
+  +BIDS
+  +Optional: PyschDS 
+}
+'Circle back to including PyschDS per recent conversations
+
+class BIDS {
+  +DatasetType:          String
+  +BIDSVersion:          String
+  +Name:                 String
+  +License:              String
+  +Authors:              List<String>
+  +Funding:              List<String>
+  +EthicsApprovals:      List<String>
+  +SupportedModalities:  List<String>
+  +ParticipantsFile:     TSV/JSON
+  +ScansFile:            TSV/JSON
+  +SessionsFile:         TSV/JSON
+  +PhenotypicData:       TSV/JSON
+  +DatasetDescription:   JSON
+  +Readme:               Markdown/Text
+  +Citation:             CFF/JSON
+  +Code:                 Directory
+  --
+BIDSParticipants : Includes participant data
+BIDSSession : Organizes by session data
+BIDSModality : Links raw data to metadata
+}
+
+class NWB {
+  +Group:             List<String>
+  +Dataset:           List<String>
+  +Attribute:         List<String>
+  +Link:              List<String>
+  ---
+  Group:
+  +Acquisition:       Data streams recorded from the system
+  +Intervals:         Experimental intervals
+  +Stimulus:          Stimulus data
+  +General:           Experimental metadata
+  +Processing:        Intermediate analysis data
+  +Analysis:          Lab-specific and custom analysis
+---
+  Dataset: 
+  +Description:       Basic description of the dataset type
+  +Organization:      Organization of data within the type
+  +Tables:            Contained datasets, attributes, and groups
+  +Subsections:       Optional content of subgroups
+  +Name:              Unique name of the object
+  +Neurodata_Type:    If object has no unique name
+  +Depth:             Prefixes (e.g., `—`) indicate hierarchy
+---
+Attribute:
+  +Neurodata_Type:    Name of the NWB primitive
+  +Namespace:         Namespace defining the type
+  +Object_ID:         UUID for the object (RFC 4122-compliant)
+--
+Link:
+  +Soft Links:        References within the file
+  +Hard Links:        Avoided in NWB
+  +Dangling Links:    Occurs when target is removed/moved
+}
+
+' Relationships
+' EMBER Project = Centralized system 
+Portal <--> EMBERProject
+Portal <--> DANDI
+Portal <--> EMBERPHI_PII
+DANDI <--> EMBERProject : Shares metadata (When data is fully public)
+
+
+' To organize into main groups, types, required attributes, and describe linking mechanisms with standards
+DANDI --> BIDS : Supported by BIDS 
+DANDI --> NWB : Supported by NWB 
+DANDI --> PyschDS : Supported by PyschDS 
+
+@enduml
