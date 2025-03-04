@@ -1,0 +1,53 @@
+# https://www.mermaidchart.com/app/projects/ffe65222-4209-4fef-bee5-883f569b7bd5/diagrams/cba40056-1d79-41fd-8bd6-e1feae93a5f1/version/v0.1/edit
+---
+config:
+  layout: fixed
+---
+flowchart TB
+    addContributor["Add Contributor"] --> contributor["Contributor"]
+    projectowner["Project Owner"] --> addContributor & createProject["Create Project"] & defineaccesscontrol["Define Access Control"] & addAdministrator["Add Administrator"]
+    addAdministrator --> projectAdmin["Project Administrators"]
+    projectAdmin --> createProject & defineaccesscontrol & userApproval["User Approval"] & userManagement["User Management"]
+    createProject --> defineaccesscontrol & prepareData["PrepareData"]
+    defineaccesscontrol --> reviewProject["Review Project"]
+    reviewProject --> uploadData["Upload Data"]
+    emberadmin["EMBER Admin"] --> uploadData
+    uploadData --> publishMetadata["Publish Metadata"] & privateDataAccess["Private Data Access"]
+    publishMetadata --> userApproval
+    userApproval --> userManagement
+    uploadData <--> Userdataaccess["User Data Access (Read)"]
+    authorizedEndUser["Authorized End User (With Account)"] --> userApplication["User Application"] & Userdataaccess
+    userApplication --> userApproval
+    contributor --> privateDataAccess
+    prepareData --> validateData["validateData"]
+    validateData --> uploadData
+    n1[" "] --> n2[" "]
+    n3[" "] --> n4[" "]
+    Step["Step"]
+    OptionalStep["Optional Step"]
+    Role["Role"]
+    addContributor@{ shape: trap-b}
+    createProject@{ shape: trap-b}
+    defineaccesscontrol@{ shape: trap-b}
+    addAdministrator@{ shape: trap-b}
+    userApproval@{ shape: trap-b}
+    userManagement@{ shape: trap-b}
+    prepareData@{ shape: trap-b}
+    reviewProject@{ shape: trap-b}
+    uploadData@{ shape: trap-b}
+    privateDataAccess@{ shape: trap-b}
+    userApplication@{ shape: trap-b}
+    validateData@{ shape: trap-b}
+    n1@{ shape: anchor}
+    n2@{ shape: anchor}
+    n3@{ shape: anchor}
+    n4@{ shape: anchor}
+     addContributor:::optional
+     addAdministrator:::optional
+     prepareData:::role
+     privateDataAccess:::role
+     validateData:::role
+    classDef default fill:#fff,stroke:#333,stroke-width:2px
+    classDef optional fill:#bbb,stroke:#333,stroke-width:2px
+    style Class_II color:#D50000
+
