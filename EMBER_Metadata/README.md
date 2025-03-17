@@ -1,7 +1,6 @@
-# EMBER x DANDI x NWB x BIDS Metadata Relationships
+# EMBER x DANDI Metadata Relationships
 
 ![Ember Relationship Diagram](MetadataOutline.png)
-
 
 This repository contains a PlantUML diagram that visualizes the integration of Ecosystem for Multi-modal Brain-behavior Experimentation and Research (EMBER), Distributed Archives for Neurophysiology Data Integration (DANDI), Brain Imaging Data Structure (BIDS), and Neurodata Without Borders (NWB) metadata for neuroimaging and behavioral data management. 
 
