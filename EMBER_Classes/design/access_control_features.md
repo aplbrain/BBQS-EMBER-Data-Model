@@ -32,4 +32,4 @@ This document outlines the access control features implemented in the EMBER syst
 - **Security Measures**: Encrypts data in transit and at rest
 - **Protect Sensitive Information**: Prevents unauthorized access to sensitive data
 
-These features are integrated into the EMBER Portal to manage different types of data across varying levels of sensitivity, ensuring both compliance with governance standards and protection of sensitive information.
+These features are integrated into the EMBER Portal to manage different types of data across varying levels of sensitivity to ensure compliance with governance standards and protection of sensitive information.
