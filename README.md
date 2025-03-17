@@ -1,5 +1,5 @@
 # BBQS-EMBER
-![DANDI - EMBER Relationship Diagram](EMBER-DANDI_general_graphic.png)
+![DANDI - EMBER Relationship Diagram](EMBER_Metadata/EMBER-DANDI_general_graphic.png)
 
 Welcome to BBQS-EMBER repository, which helps visualizes and manages the integration of metadata standards for neuroimaging and behavioral data across the EMBER, DANDI, NWB, and BIDS platforms.
 
