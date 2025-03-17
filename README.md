@@ -4,7 +4,7 @@
 Welcome to BBQS-EMBER repository, which helps visualizes and manages the integration of metadata standards for neuroimaging and behavioral data across the EMBER, DANDI, NWB, and BIDS platforms.
 
 ## Repository Overview
-This repository hosts a PlantUML diagram and supporting documentation that delineate how the EMBER, DANDI, NWB, and BIDS metadata standards connect to support data organization across multiple domains in neuroimaging and behavioral research.
+This repository contains PlantUML diagrams, Mermaid charts, and additional documentation that illustrate how the EMBER, DANDI, NWB, and BIDS metadata standards interconnect to facilitate data organization across various domains in neuroimaging and behavioral research.
 
 ## Metadata Standards
 - **EMBER (Ecosystem for Multi-modal Brain-behavior Experimentation and Research):** EMBER is the BRAIN Initiative data archive for multi-modal neurophysiological and behavioral data. It includes details on the principal investigator, species studied, sensors used, and data modalities, supporting the Brain Behavior Quantification and Synchronization (BBQS) Program
