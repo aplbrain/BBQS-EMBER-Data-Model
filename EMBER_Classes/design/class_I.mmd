@@ -3,41 +3,36 @@ config:
   layout: fixed
 ---
 flowchart TB
-    addRegistration["Register Project (Public)"] --> projectowner
-    addContributor["Add Contributor"] --> contributor["Contributor"]
-    projectowner["Project Owner"] --> addContributor & createProject["Create Project"] & defineEmbargoPeriod["Define Embargo Period"]
-    createProject --> defineEmbargoPeriod & prepareData["Prepare Data"]
-    defineEmbargoPeriod --> reviewProject["Review Project"]
-    emberAdmin["EMBER Admin"] --> reviewProject & publishProject["Publish Project"]
-    reviewProject --> uploadData["Upload Data"]
-    uploadData --> endEmbargo["End Embargo"]
+    projectowner["Project Owner"] --> addTitle["Add Title"] & addDescription["Add Description"] & addLicense["Add License"] 
+    addRegistrationPublic["Register Dandiset (Public)"] & addRegistrationPrivate["Register Dandiset (Embargoed/Private)"] 
+    addRegistrationPrivate & addRegistrationPublic--> prepareData["Prepare Data"]
+    addTitle["Add Title"] & addDescription["Add Description"] & addLicense["Add License"] -->  addRegistrationPublic & addRegistrationPrivate 
+    prepareData --> convertNWB["Convert Data to NWB"] & convertBIDS["Convert Data to BIDS"]
+    convertNWB["Convert Data to NWB"] & convertBIDS["Convert Data to BIDS"]--> validateData["Validate Data"]
+    validateData --> uploadData["Upload Data"]
+    uploadData["Upload Data"]--> embargoedData["Embargoed/Private Data"] & publicData["Public Data"]
+    embargoedData--> endEmbargo["End Embargo"]
+    publicData --> publishProject["Publish Project"]
+    emberAdmin["EMBER Admin"] --> publishProject["Publish Project"]
     endEmbargo --> publishProject
     publishProject --> accessData["Access Data"]
-    accessData --> endUserNoAccount["End User (No Account)"] & endUserAccount["End User (Account)"]
-    contributor --> prepareData
-    prepareData --> validateData["validateData"]
-    validateData <--> privateDataAccess["Private Data Access"]
-    privateDataAccess --> uploadData
-    Class_I["Class_I"]
-    addContributor@{ shape: trap-b}
-    contributor@{ shape: trap-b}
-    createProject@{ shape: trap-b}
-    defineEmbargoPeriod@{ shape: trap-b}
+    endUserNoAccount["End User (No Account)"] & endUserAccount["End User (Account)"] --> accessData 
     prepareData@{ shape: trap-b}
-    reviewProject@{ shape: trap-b}
     publishProject@{ shape: trap-b}
     uploadData@{ shape: trap-b}
     endEmbargo@{ shape: trap-b}
     accessData@{ shape: trap-b}
     validateData@{ shape: trap-b}
-    privateDataAccess@{ shape: trap-b}
-     addContributor:::optional
-     defineEmbargoPeriod:::optional
+    convertNWB@{ shape: trap-b}
+    convertBIDS@{ shape: trap-b}
+    addTitle@{ shape: trap-b}
+     addDescription@{ shape: trap-b}
+     addLicense@{ shape: trap-b}
+    Class_I["Class_I"]
      prepareData:::role
      endEmbargo:::optional
      validateData:::role
-     privateDataAccess:::role
+     addRegistrationPrivate:::optional
     classDef default fill:#fff,stroke:#333,stroke-width:2px
     classDef optional fill:#bbb,stroke:#333,stroke-width:2px
     style Class_I color:#D50000
-
