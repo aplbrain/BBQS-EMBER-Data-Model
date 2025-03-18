@@ -4,7 +4,9 @@
 
 This repository contains a PlantUML diagram that visualizes the integration of Ecosystem for Multi-modal Brain-behavior Experimentation and Research (EMBER), Distributed Archives for Neurophysiology Data Integration (DANDI), Brain Imaging Data Structure (BIDS), and Neurodata Without Borders (NWB) metadata for neuroimaging and behavioral data management. 
 
-The goal is to provide a clear structure for understanding how these metadata standards interconnect and support data organization across multiple domains.
+The goal is to provide a clear structure for understanding how these metadata standards interconnect and support data organization across multiple domains, especially when uploading data to the EMBER-DANDI system. 
+
+![Ember-Dandi Pipeline](EMBER-DANDI_Upload_Pipeline.png)
 
 ## Overview
 The diagram outlines the following key components:
