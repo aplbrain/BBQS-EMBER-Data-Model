@@ -4,29 +4,22 @@ config:
 ---
 flowchart TB
     createProject["Create Project"] --> defineAccessControl["Define Access Control"] & prepareData["Prepare Data"]
-    projectAdmin["Project Admin"] --> defineAccessControl
+    projectowner["Project Owner"] --> addTitle["Add Title"] & addDescription["Add Description"] & addLicense["Add License"] 
+    addTitle["Add Title"] & addDescription["Add Description"] & addLicense["Add License"] -->createProject
     defineAccessControl --> reviewProject["Review Project"]
     reviewProject --> uploadData["Upload Data"]
     validateData["Validate Data"] --> uploadData
     uploadData --> privateDataAccess["Private Data Access"]
-    contributor["Contributor"] --> prepareData & validateData & privateDataAccess
     prepareData --> validateData
-    projectOwner["Project Owner"] --> createProject & addAdministrator["Add Administrator"] & addContributor["Add Contributor"]
-    addAdministrator <--> addContributor
-    addAdministrator --> contributor
     emberAdmin["EMBER Admin"] --> reviewProject
     projectAdmin@{ shape: rect}
     contributor@{ shape: rect}
     projectOwner@{ shape: rect}
-    addAdministrator@{ shape: trap-b}
-    addContributor@{ shape: trap-b}
     emberAdmin@{ shape: rect}
     n1@{ shape: anchor}
      prepareData:::role
      validateData:::role
      privateDataAccess:::role
-     addAdministrator:::optional
-     addContributor:::optional
     classDef default fill:#fff,stroke:#333,stroke-width:2px
     classDef optional fill:#bbb,stroke:#333,stroke-width:2px
     style Class_III color:#D50000

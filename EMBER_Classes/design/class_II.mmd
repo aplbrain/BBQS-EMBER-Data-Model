@@ -4,13 +4,14 @@ config:
 ---
 flowchart TB
     addContributor["Add Contributor"] --> contributor["Contributor"]
-    projectowner["Project Owner"] --> addContributor & createProject["Create Project"] & defineaccesscontrol["Define Access Control"] & addAdministrator["Add Administrator"]
-    addAdministrator --> projectAdmin["Project Administrators"]
-    projectAdmin --> createProject & defineaccesscontrol & userApproval["User Approval"] & userManagement["User Management"]
-    createProject --> defineaccesscontrol & prepareData["PrepareData"]
-    defineaccesscontrol --> reviewProject["Review Project"]
-    reviewProject --> uploadData["Upload Data"]
-    emberadmin["EMBER Admin"] --> uploadData
+    projectowner["Project Owner"] --> addTitle["Add Title"] & addDescription["Add Description"] & addLicense["Add License"] 
+    addRegistrationPublic["Register Dandiset (Public)"] & addRegistrationPrivate["Register Dandiset (Embargoed/Private)"] 
+    addRegistrationPrivate & addRegistrationPublic--> prepareData["Prepare Data"]
+    addTitle["Add Title"] & addDescription["Add Description"] & addLicense["Add License"] -->  addRegistrationPublic & addRegistrationPrivate 
+    prepareData --> convertNWB["Convert Data to NWB"] & convertBIDS["Convert Data to BIDS"]
+    convertNWB["Convert Data to NWB"] & convertBIDS["Convert Data to BIDS"]--> validateData["Validate Data"]
+    projectAdmin["Project Administrators"] --> userApproval["User Approval"] & userManagement["User Management"]
+    emberadmin["EMBER Admin"] --> uploadData["Upload Data"]
     uploadData --> publishMetadata["Publish Metadata"] & privateDataAccess["Private Data Access"]
     publishMetadata --> userApproval
     userApproval --> userManagement
@@ -18,19 +19,11 @@ flowchart TB
     authorizedEndUser["Authorized End User (With Account)"] --> userApplication["User Application"] & Userdataaccess
     userApplication --> userApproval
     contributor --> privateDataAccess
-    prepareData --> validateData["validateData"]
     validateData --> uploadData
-    Step["Step"]
-    OptionalStep["Optional Step"]
-    Role["Role"]
     addContributor@{ shape: trap-b}
-    createProject@{ shape: trap-b}
-    defineaccesscontrol@{ shape: trap-b}
-    addAdministrator@{ shape: trap-b}
     userApproval@{ shape: trap-b}
     userManagement@{ shape: trap-b}
     prepareData@{ shape: trap-b}
-    reviewProject@{ shape: trap-b}
     uploadData@{ shape: trap-b}
     privateDataAccess@{ shape: trap-b}
     userApplication@{ shape: trap-b}
@@ -39,10 +32,9 @@ flowchart TB
     n2@{ shape: anchor}
     n3@{ shape: anchor}
     n4@{ shape: anchor}
-     addContributor:::optional
-     addAdministrator:::optional
      prepareData:::role
      privateDataAccess:::role
+    addRegistrationPrivate:::optional
      validateData:::role
     classDef default fill:#fff,stroke:#333,stroke-width:2px
     classDef optional fill:#bbb,stroke:#333,stroke-width:2px
