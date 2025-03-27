@@ -1,5 +1,6 @@
 classDiagram
     class EMBERProject {
+      +Identifier: String
       +Type: String
       +Link: String
       +PoP years (max): String
@@ -23,11 +24,13 @@ classDiagram
     }
     
     class EMBERPHI_PII {
-      +Identifier: String
       +PII_Fields: List<String>
-      +Privacy_Level: String
     }
-    
+
+    class EMBERPHI_PII_SubjectID{
+      +Identifier: String
+    }
+
     class DANDI {
       DANDIsetMetadata
       +General: String
@@ -43,7 +46,6 @@ classDiagram
       DjangoRESTFramework
       +RenderJSON: String
       +ServeAPI: String
-      
       ---
       Standards:
       +NWB
@@ -112,6 +114,7 @@ classDiagram
     EMBER_Portal --> EMBERProject : "Centralized system"
     EMBER_Portal --> DANDI
     EMBER_Portal --> EMBERPHI_PII
+    EMBERPHI_PII_SubjectID --> EMBERPHI_PII
     DANDI --> EMBERProject : "Shares metadata (When data is fully public)"
     DANDI --> BIDS : "Supported by BIDS"
     DANDI --> NWB : "Supported by NWB"
