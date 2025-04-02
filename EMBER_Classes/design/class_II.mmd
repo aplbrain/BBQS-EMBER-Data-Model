@@ -1,15 +1,19 @@
 ---
 config:
-  layout: fixed
+  layout: dagre
 ---
 flowchart TB
     addContributor["Add Contributor"] --> contributor["Contributor"]
-    projectowner["Project Owner"] --> addTitle["Add Title"] & addDescription["Add Description"] & addLicense["Add License"] 
-    addRegistrationPublic["Register Dandiset (Public)"] & addRegistrationPrivate["Register Dandiset (Embargoed/Private)"] 
-    addRegistrationPrivate & addRegistrationPublic--> prepareData["Prepare Data"]
-    addTitle["Add Title"] & addDescription["Add Description"] & addLicense["Add License"] -->  addRegistrationPublic & addRegistrationPrivate 
-    prepareData --> convertNWB["Convert Data to NWB"] & convertBIDS["Convert Data to BIDS"]
-    convertNWB["Convert Data to NWB"] & convertBIDS["Convert Data to BIDS"]--> validateData["Validate Data"]
+    projectowner["Project Owner"] --> addTitle["Add Title"] & addDescription["Add Description"] & addLicense["Add License"]
+    addRegistrationPrivate["Register Dandiset (Embargoed/Private)"] --> prepareData["Prepare Data"]
+    addRegistrationPublic["Register Dandiset (Public)"] --> prepareData
+    addTitle --> addRegistrationPublic & addRegistrationPrivate
+    addDescription --> addRegistrationPublic & addRegistrationPrivate
+    addLicense --> addRegistrationPublic & addRegistrationPrivate
+    prepareData --> convertFileStandards["Convert Data to File Standards (e.g. NWB, mp4)"]
+    convertFileStandards --> convertBIDS["Convert Data to BIDS"] & convertDANDI["Convert to DANDI layout"]
+    convertDANDI --> validateDataset
+    convertBIDS --> validateDataset
     projectAdmin["Project Administrators"] --> userApproval["User Approval"] & userManagement["User Management"]
     emberadmin["EMBER Admin"] --> uploadData["Upload Data"]
     uploadData --> publishMetadata["Publish Metadata"] & privateDataAccess["Private Data Access"]
@@ -19,23 +23,28 @@ flowchart TB
     authorizedEndUser["Authorized End User (With Account)"] --> userApplication["User Application"] & Userdataaccess
     userApplication --> userApproval
     contributor --> privateDataAccess
-    validateData --> uploadData
+    validateDataset["Validate Dataset"] --> uploadData
+    n1["n1"]
+    n2["n2"]
+    n3["n3"]
+    n4["n4"]
+    Class_II["Class_II"]
     addContributor@{ shape: trap-b}
+    prepareData@{ shape: trap-b}
+    validateDataset@{ shape: trap-b}
     userApproval@{ shape: trap-b}
     userManagement@{ shape: trap-b}
-    prepareData@{ shape: trap-b}
     uploadData@{ shape: trap-b}
     privateDataAccess@{ shape: trap-b}
     userApplication@{ shape: trap-b}
-    validateData@{ shape: trap-b}
     n1@{ shape: anchor}
     n2@{ shape: anchor}
     n3@{ shape: anchor}
     n4@{ shape: anchor}
+     addRegistrationPrivate:::optional
      prepareData:::role
-     privateDataAccess:::role
-    addRegistrationPrivate:::optional
      validateData:::role
+     privateDataAccess:::role
     classDef default fill:#fff,stroke:#333,stroke-width:2px
     classDef optional fill:#bbb,stroke:#333,stroke-width:2px
     style Class_II color:#D50000
