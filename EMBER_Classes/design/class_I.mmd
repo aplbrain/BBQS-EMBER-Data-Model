@@ -3,6 +3,7 @@ config:
   layout: fixed
 ---
 flowchart TB
+    authenticate["Authenticate & Authorize (Keycloak)"] --> projectowner["Project Owner"]
     addContributor["Add Contributor"] --> contributor["Contributor"]
     projectowner["Project Owner"] --> addContributor & createProject["Create Project"] & defineEmbargoPeriod["Define Embargo Period"]
     createProject --> defineEmbargoPeriod & prepareData["Prepare Data"]
