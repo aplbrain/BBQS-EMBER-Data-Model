@@ -28,7 +28,7 @@ The guidelines apply to all team members who access, handle, or manage data that
    - Do not copy, distribute, or transmit embargoed data outside the secure environment without explicit permission
 
 4. **Communication:**
-   - Discuss embargoed data only within secure communication channels.
+   - Discuss embargoed data only within secure communication channels
    - Ensure all communications regarding embargoed data are marked as confidential
 
 5. **Breach Protocol:**
