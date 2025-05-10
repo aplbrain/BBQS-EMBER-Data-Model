@@ -1,0 +1,147 @@
+---
+title: Wearables NDX Class Diagram
+---
+%%{init: {'theme':'neutral'}}%%
+    classDiagram
+        direction RL
+
+
+        NWBDataInterface --|> TimeSeries
+        NWBDataInterface <|-- NWBContainer
+        WearableDevice <|-- NWBContainer
+        WearableSensor <|-- NWBContainer
+        WearableSeries <|-- TimeSeries
+        PhysiologicalMeasure <|-- MultiContainerInterface
+        MultiContainerInterface <|-- NWBDataInterface
+        MultiContainerInterface <|-- hdmf_MultiContainerInterface
+        hdmf_MultiContainerInterface <|-- Container
+        Container <|-- AbstractContainer
+        NWBContainer <|-- Container
+        NWBContainer <|-- NWBMixin 
+        NWBMixin <|-- AbstractContainer
+
+        WearableSensor --> WearableDevice 
+        WearableSeries --> WearableSensor
+        WearableSeries "1..*" --o PhysiologicalMeasure
+    
+        namespace pynwb.base {
+            class TimeSeries {
+                comments ~string~
+                description ~string~
+                data ~array[uint8]~
+                resolution ~float~
+                conversion ~float~
+                offset ~float~
+                unit ~string~
+                timestamps ~array~
+                timestamps_unit ~string~
+                interval ~int~
+                starting_time ~float~
+                rate ~float~
+                starting_time_unit ~string~
+                control ~Iterable~
+                control_description ~Iterable~
+                continuity ~str~
+                num_samples ~int~
+                data_link ~~
+                timestamp_link ~~
+
+
+                _check_time_series_dimension(self)
+                __get_links(self, links)
+                __add_link(self, links_key, link)
+                _generate_field_html(self, key, value, level, access_code)
+                get_timestamps(self)
+                get_data_in_units(self)
+
+
+
+            }
+        }
+
+        namespace pynwb.core {
+            class NWBDataInterface {
+            }
+
+            class MultiContainerInterface {
+            }
+
+            class NWBContainer {
+                + name ~string~
+            }
+
+            class NWBMixin {
+                name ~str~
+                data_type ~~
+
+                get_ancestor(neurodata_type)
+            }
+        }
+        
+        namespace hdmf.container {
+            class hdmf_MultiContainerInterface {
+                name ~str~
+            }
+
+            class Container {
+                name ~str~
+                css_style ~str~
+                js_script ~str~
+
+                set_data_io(dataset_name, data_io_class, data_io_kwargs, data_chunk_iterator_class, data_chunk_iterator_kwargs, **kwargs)
+
+            }
+            
+            class AbstractContainer {
+                name ~str~
+                data_type ~~
+                read_io ~HDMFIO~
+                all_objects ~dict~
+                fields ~[List, dict]~
+                object_id ~~
+                modified ~bool~
+                children ~~
+                container_source ~~
+                parent ~Container~
+
+                get_fields_conf()
+                get_read_io()
+                get_ancestor(data_type)
+                all_children()
+                get_ancestors()
+                generate_new_id(recurse)
+                set_modified(modified)
+                type_hierarchy()
+                reset_parent()
+            }
+
+        }
+
+        namespace NWBWearables {
+            class WearableDevice {
+                + name ~string~
+                + description ~string~
+                + manufacturer ~string~
+                + location ~string~
+            }
+
+            class WearableSensor {
+                + name ~string~
+                + description ~string~
+                + device ~string~
+            }
+
+            class WearableSeries {
+                data ~array[TBD]~
+                sensor ~WearableSensor~
+
+                get_sensor(self)
+            }
+
+            class PhysiologicalMeasure{
+
+            }
+
+        }
+        
+        
