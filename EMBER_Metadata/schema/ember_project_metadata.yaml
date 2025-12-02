@@ -23,10 +23,6 @@ classes:
         required: true       ## must be supplied
         description:
           doi in ember system
-      project_description:
-        required: true      ## must be supplied
-        description:
-          text description of the project
       data_availability_emberdandi:
         required: true       ## must be supplied
         range: boolean       
