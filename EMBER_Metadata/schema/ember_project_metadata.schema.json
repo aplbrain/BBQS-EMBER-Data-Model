@@ -1,0 +1,254 @@
+{
+    "$defs": {
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "persons": {
+                    "items": {},
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Container",
+            "type": "object"
+        },
+        "EmberProject": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "access_tier_summary": {
+                    "description": "text description of different data tiers",
+                    "type": "string"
+                },
+                "data_administrator": {
+                    "description": "POC for data management",
+                    "type": "string"
+                },
+                "data_availability_emberdandi": {
+                    "description": "yes/no indicating if data are available in emberdandi",
+                    "type": "boolean"
+                },
+                "data_availability_emberrestricted": {
+                    "description": "yes/no indicating if data are available in emberrestricted",
+                    "type": "boolean"
+                },
+                "data_availability_embervault": {
+                    "description": "yes/no indicating if PHI/PII data in embervault",
+                    "type": "boolean"
+                },
+                "ember_doi": {
+                    "description": "doi in ember system",
+                    "type": "string"
+                },
+                "emberdandisets": {
+                    "description": "emberdandiset ids",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "last_metadata_update": {
+                    "description": "date and time of last metadata update",
+                    "type": "string"
+                },
+                "metadata_version": {
+                    "description": "version of the metadata",
+                    "type": "string"
+                },
+                "project_description": {
+                    "description": "text description of the project",
+                    "type": "string"
+                },
+                "project_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "project_title": {
+                    "description": "title of the project",
+                    "type": "string"
+                },
+                "related_dandisets": {
+                    "description": "DOIs for related dandisets",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "related_data": {
+                    "description": "Identifiers for other related datasets",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "related_publications": {
+                    "description": "DOIs for related publications",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "related_repositories": {
+                    "description": "Identifiers for related repositories",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "restricted_datasets": {
+                    "description": "restricted dataset ids",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "vault_ids": {
+                    "description": "embervault ids",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "project_id",
+                "project_title",
+                "project_description",
+                "ember_doi",
+                "data_availability_emberdandi",
+                "data_availability_emberrestricted",
+                "data_availability_embervault",
+                "access_tier_summary",
+                "data_administrator",
+                "last_metadata_update",
+                "metadata_version"
+            ],
+            "title": "EmberProject",
+            "type": "object"
+        }
+    },
+    "$id": "https://w3id.org/emberarchive/emberproject",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "",
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "access_tier_summary": {
+            "description": "text description of different data tiers",
+            "type": "string"
+        },
+        "data_administrator": {
+            "description": "POC for data management",
+            "type": "string"
+        },
+        "data_availability_emberdandi": {
+            "description": "yes/no indicating if data are available in emberdandi",
+            "type": "boolean"
+        },
+        "data_availability_emberrestricted": {
+            "description": "yes/no indicating if data are available in emberrestricted",
+            "type": "boolean"
+        },
+        "data_availability_embervault": {
+            "description": "yes/no indicating if PHI/PII data in embervault",
+            "type": "boolean"
+        },
+        "ember_doi": {
+            "description": "doi in ember system",
+            "type": "string"
+        },
+        "emberdandisets": {
+            "description": "emberdandiset ids",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "last_metadata_update": {
+            "description": "date and time of last metadata update",
+            "type": "string"
+        },
+        "metadata_version": {
+            "description": "version of the metadata",
+            "type": "string"
+        },
+        "project_description": {
+            "description": "text description of the project",
+            "type": "string"
+        },
+        "project_id": {
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "project_title": {
+            "description": "title of the project",
+            "type": "string"
+        },
+        "related_dandisets": {
+            "description": "DOIs for related dandisets",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "related_data": {
+            "description": "Identifiers for other related datasets",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "related_publications": {
+            "description": "DOIs for related publications",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "related_repositories": {
+            "description": "Identifiers for related repositories",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "restricted_datasets": {
+            "description": "restricted dataset ids",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "vault_ids": {
+            "description": "embervault ids",
+            "type": [
+                "string",
+                "null"
+            ]
+        }
+    },
+    "required": [
+        "project_id",
+        "project_title",
+        "project_description",
+        "ember_doi",
+        "data_availability_emberdandi",
+        "data_availability_emberrestricted",
+        "data_availability_embervault",
+        "access_tier_summary",
+        "data_administrator",
+        "last_metadata_update",
+        "metadata_version"
+    ],
+    "title": "emberproject",
+    "type": "object",
+    "version": null
+}
+

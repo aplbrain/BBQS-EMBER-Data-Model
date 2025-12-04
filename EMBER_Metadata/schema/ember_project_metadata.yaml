@@ -7,84 +7,104 @@ imports:
 default_range: string
 
 classes:
+
   EmberProject:
     attributes:
+
       project_id:
         identifier: true     ## unique key for project
+
       project_title:
         required: true       ## title of the project
-        description:
+        description: 
           title of the project
+
       project_description:
         required: true       ## must be supplied
-        description:
+        description: 
           text description of the project
+
       ember_doi:
         required: true       ## must be supplied
-        description:
+        description: 
           doi in ember system
+      
       data_availability_emberdandi:
         required: true       ## must be supplied
         range: boolean       
-        description:
+        description: 
           yes/no indicating if data are available in emberdandi
+      
       data_availability_emberrestricted:
         required: true       ## must be supplied
         range: boolean       
-        description:
+        description: 
           yes/no indicating if data are available in emberrestricted
+      
       data_availability_embervault:
         required: true       ## must be supplied
         range: boolean       
         description:
           yes/no indicating if PHI/PII data in embervault
+
       access_tier_summary:
         required: true      ## must be supplied
-        description:
+        description: 
           text description of different data tiers
+      
       emberdandisets:
         multivalued: false    ## range is a list
         description:
           emberdandiset ids
+      
       restricted_datasets:
         multivalued: false    ## range is a list
-        description:
+        description: 
           restricted dataset ids    
+      
       vault_ids:
         multivalued: false   ## range is a list
-        description:
+        description: 
           embervault ids
+      
       data_administrator:
         required: true      ## must be supplied
-        description:
-          POC for data management 
+        description: 
+          POC for data management
+      
       last_metadata_update:
         required: true      ## must be supplied
-        description:
+        description: 
           date and time of last metadata update
+      
       metadata_version:
         required: true      ## must be supplied
-        description:
+        description: 
           version of the metadata
+      
       related_publications:
         multivalued: false   ## range is a list
-        description:
+        description: 
           DOIs for related publications
+      
       related_repositories:
         multivalued: false   ## range is a list
-        description:
+        description: 
           Identifiers for related repositories
+      
       related_dandisets:
         multivalued: false   ## range is a list
-        description:
+        description: 
           DOIs for related dandisets
+      
       related_data:
         multivalued: false   ## range is a list
-        description:
+        description: 
           Identifiers for other related datasets
+  
   Container:
     attributes:
       persons:
         multivalued: true
         inlined_as_list: true
-        range: Person
+        range: "Person"

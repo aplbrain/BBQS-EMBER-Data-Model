@@ -1,0 +1,31 @@
+# Using R61MH138705 as an example to test against schema.yaml
+project_id: "R61MH138705"
+
+project_title: "Neural and Behavioral Correlates of Live Face-to-Face Interactions"
+
+project_description: >
+  Study investigating neural and behavioral correlates during naturalistic, face-to-face human interactions.
+
+ember_doi: "10.00000/ember.placeholder"
+
+data_availability_emberdandi: false
+data_availability_emberrestricted: false
+data_availability_embervault: false
+
+access_tier_summary: >
+  Data availability and access tiers not yet assigned for this project.
+
+emberdandisets: null
+restricted_datasets: null
+vault_ids: null
+
+data_administrator: "Joy Hirsch"
+
+last_metadata_update: "2025-01-10T12:00:00Z"
+
+metadata_version: "0.1.0"
+
+related_publications: null
+related_repositories: null
+related_dandisets: null
+related_data: null
