@@ -32,7 +32,7 @@ If the help menu prints, your installation is correct.
 Validate a metadata file against the schema:
 
 ```
-linkml-validate -s ember_project_metadata.yaml data.yaml
+linkml-validate -s ember_project_metadata.yaml R61MH138705.yaml
 ```
 
 ## Generate a full JSON Schema using the generator:

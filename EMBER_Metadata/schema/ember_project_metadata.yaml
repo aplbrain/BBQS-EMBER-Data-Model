@@ -9,6 +9,7 @@ default_range: string
 classes:
 
   EmberProject:
+    tree_root: true
     attributes:
 
       project_id:
@@ -68,10 +69,10 @@ classes:
           embervault ids
       
       data_administrator:
-        required: true      ## must be supplied
-        description: 
-          POC for data management
-      
+        range: Contributor
+        required: true
+        description: Primary point of contact for data management
+
       last_metadata_update:
         required: true      ## must be supplied
         description: 
@@ -108,3 +109,44 @@ classes:
         multivalued: true
         inlined_as_list: true
         range: "Person"
+
+  Funding:
+    description: Funding source information for the project
+    attributes:
+
+      funding_institute:
+        required: true
+        description: Name of the funding institute (e.g., NIH, NSF, DARPA)
+
+      award_number:
+        required: true
+        description: Funding award or grant number
+
+      award_title:
+        required: false
+        description: Title of the funded award
+
+      funding_url:
+        required: false
+        description: URL to the funding announcement or award page
+
+  Contributor:
+    description: Person or organization contributing to the project
+    attributes:
+
+      contributor_id:
+        description: Persistent identifier for the contributor (e.g., ORCID)
+        identifier: true
+        required: true
+
+      name:
+        required: true
+        description: Full name of the contributor
+
+      email:
+        required: false
+        description: Contact email address
+
+      institution:
+        required: false
+        description: Institutional affiliation
