@@ -1,0 +1,41 @@
+project_id: R61MH135106
+
+project_title: Synchronized neuronal and peripheral biomarker recordings in freely moving humans
+
+project_description: >
+  This project investigates synchronized neural and peripheral biomarker
+  recordings in freely moving humans to enable naturalistic studies of brain
+  and body dynamics.
+
+ember_doi: "10.00000/EMBER.R61MH135106"
+
+data_availability_emberdandi: false
+data_availability_emberrestricted: false
+data_availability_embervault: false
+
+access_tier_summary: >
+  Data availability and access tiers have not yet been assigned.
+
+emberdandisets: []
+restricted_datasets: []
+vault_ids: []
+
+data_administrator:
+  contributor_id: nanthia@duke.edu
+  name: Nanthia A Suthana
+  email: nanthia@duke.edu
+  institution: University Of California Los Angeles
+
+last_metadata_update: "2025-01-10T12:00:00Z"
+metadata_version: "0.1.0"
+
+related_publications: []
+related_repositories: []
+related_dandisets: []
+related_data: []
+
+funding:
+  - funding_institute: NIH
+    award_number: R61MH135106
+    award_title: Synchronized neuronal and peripheral biomarker recordings in freely moving humans
+    funding_url: https://reporter.nih.gov/project-details/10792386

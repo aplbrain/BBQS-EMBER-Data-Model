@@ -43,8 +43,8 @@
                     "type": "string"
                 },
                 "data_administrator": {
-                    "description": "Primary point of contact for data management",
-                    "type": "string"
+                    "$ref": "#/$defs/Contributor",
+                    "description": "Primary point of contact for data management"
                 },
                 "data_availability_emberdandi": {
                     "description": "yes/no indicating if data are available in emberdandi",
@@ -107,43 +107,61 @@
                 },
                 "related_dandisets": {
                     "description": "DOIs for related dandisets",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "related_data": {
                     "description": "Identifiers for other related datasets",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "related_publications": {
                     "description": "DOIs for related publications",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "related_repositories": {
                     "description": "Identifiers for related repositories",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "restricted_datasets": {
                     "description": "restricted dataset ids",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "vault_ids": {
                     "description": "embervault ids",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 }
@@ -210,8 +228,8 @@
             "type": "string"
         },
         "data_administrator": {
-            "description": "Primary point of contact for data management",
-            "type": "string"
+            "$ref": "#/$defs/Contributor",
+            "description": "Primary point of contact for data management"
         },
         "data_availability_emberdandi": {
             "description": "yes/no indicating if data are available in emberdandi",
@@ -274,43 +292,61 @@
         },
         "related_dandisets": {
             "description": "DOIs for related dandisets",
+            "items": {
+                "type": "string"
+            },
             "type": [
-                "string",
+                "array",
                 "null"
             ]
         },
         "related_data": {
             "description": "Identifiers for other related datasets",
+            "items": {
+                "type": "string"
+            },
             "type": [
-                "string",
+                "array",
                 "null"
             ]
         },
         "related_publications": {
             "description": "DOIs for related publications",
+            "items": {
+                "type": "string"
+            },
             "type": [
-                "string",
+                "array",
                 "null"
             ]
         },
         "related_repositories": {
             "description": "Identifiers for related repositories",
+            "items": {
+                "type": "string"
+            },
             "type": [
-                "string",
+                "array",
                 "null"
             ]
         },
         "restricted_datasets": {
             "description": "restricted dataset ids",
+            "items": {
+                "type": "string"
+            },
             "type": [
-                "string",
+                "array",
                 "null"
             ]
         },
         "vault_ids": {
             "description": "embervault ids",
+            "items": {
+                "type": "string"
+            },
             "type": [
-                "string",
+                "array",
                 "null"
             ]
         }

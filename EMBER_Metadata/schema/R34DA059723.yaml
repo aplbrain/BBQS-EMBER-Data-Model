@@ -1,0 +1,41 @@
+project_id: R34DA059723
+
+project_title: Multimodal behavioral analysis of oromanual food-handling in freely moving animals
+
+project_description: >
+  This project focuses on multimodal analysis of oromanual food-handling behaviors
+  in freely moving animals, integrating behavioral measurements to better understand
+  sensorimotor control during naturalistic feeding.
+
+ember_doi: "10.00000/EMBER.R34DA059723"
+
+data_availability_emberdandi: false
+data_availability_emberrestricted: false
+data_availability_embervault: false
+
+access_tier_summary: >
+  Data availability and access tiers have not yet been assigned.
+
+emberdandisets: []
+restricted_datasets: []
+vault_ids: []
+
+data_administrator:
+  contributor_id: g-shepherd@northwestern.edu
+  name: Gordon M Shepherd
+  email: g-shepherd@northwestern.edu
+  institution: Northwestern University
+
+last_metadata_update: "2025-01-10T12:00:00Z"
+metadata_version: "0.1.0"
+
+related_publications: []
+related_repositories: []
+related_dandisets: []
+related_data: []
+
+funding:
+  - funding_institute: NIH
+    award_number: R34DA059723
+    award_title: Multimodal behavioral analysis of oromanual food-handling in freely moving animals
+    funding_url: https://reporter.nih.gov/project-details/10795435

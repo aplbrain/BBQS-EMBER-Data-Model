@@ -1,0 +1,43 @@
+project_id: R34DA059500
+
+project_title: >
+  Transformative Optical Imaging of Brain & Behavior in Navigating Genetic Species
+
+project_description: >
+  This project develops optical imaging approaches to study brain–behavior
+  relationships across genetically tractable species, enabling comparative
+  and high-resolution analysis of neural activity during naturalistic behavior.
+
+ember_doi: "10.00000/EMBER.R34DA059500"
+
+data_availability_emberdandi: false
+data_availability_emberrestricted: false
+data_availability_embervault: false
+
+access_tier_summary: >
+  Data availability and access tiers have not yet been finalized.
+
+emberdandisets: []
+restricted_datasets: []
+vault_ids: []
+
+data_administrator:
+  contributor_id: david.schoppik@nyulangone.org
+  name: David Schoppik
+  email: david.schoppik@nyulangone.org
+  institution: New York University School of Medicine
+
+last_metadata_update: "2025-01-10T12:00:00Z"
+metadata_version: "0.1.0"
+
+related_publications: []
+related_repositories: []
+related_dandisets: []
+related_data: []
+
+funding:
+  - funding_institute: NIH
+    award_number: R34DA059500
+    award_title: >
+      Transformative Optical Imaging of Brain & Behavior in Navigating Genetic Species
+    funding_url: https://reporter.nih.gov/project-details/10786461

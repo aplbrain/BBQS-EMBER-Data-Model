@@ -55,24 +55,27 @@ classes:
           text description of different data tiers
       
       emberdandisets:
-        multivalued: true    ## range is a list
+        multivalued: true    
         inlined_as_list: true
         description:
           emberdandiset ids
       
       restricted_datasets:
-        multivalued: false    ## range is a list
+        multivalued: true
+        inlined_as_list: true
         description: 
-          restricted dataset ids    
-      
+          restricted dataset ids  
+
       vault_ids:
-        multivalued: false   ## range is a list
+        multivalued: true
+        inlined_as_list: true
         description: 
           embervault ids
       
       data_administrator:
-        range: Contributor
         required: true
+        range: Contributor
+        inlined: true
         description: Primary point of contact for data management
 
       last_metadata_update:
@@ -86,22 +89,26 @@ classes:
           version of the metadata
       
       related_publications:
-        multivalued: false   ## range is a list
-        description: 
+        multivalued: true
+        inlined_as_list: true
+        description:
           DOIs for related publications
       
       related_repositories:
-        multivalued: false   ## range is a list
+        multivalued: true
+        inlined_as_list: true
         description: 
           Identifiers for related repositories
       
       related_dandisets:
-        multivalued: false   ## range is a list
+        multivalued: true
+        inlined_as_list: true
         description: 
           DOIs for related dandisets
       
       related_data:
-        multivalued: false   ## range is a list
+        multivalued: true
+        inlined_as_list: true
         description: 
           Identifiers for other related datasets
       
