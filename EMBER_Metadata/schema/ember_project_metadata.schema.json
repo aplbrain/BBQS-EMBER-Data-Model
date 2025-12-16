@@ -1,20 +1,5 @@
 {
     "$defs": {
-        "Container": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "persons": {
-                    "items": {},
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                }
-            },
-            "title": "Container",
-            "type": "object"
-        },
         "Contributor": {
             "additionalProperties": false,
             "description": "Person or organization contributing to the project",
@@ -75,12 +60,26 @@
                 },
                 "ember_doi": {
                     "description": "doi in ember system",
+                    "pattern": "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$",
                     "type": "string"
                 },
                 "emberdandisets": {
                     "description": "emberdandiset ids",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
+                        "null"
+                    ]
+                },
+                "funding": {
+                    "description": "Funding sources supporting this project",
+                    "items": {
+                        "$ref": "#/$defs/Funding"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -228,12 +227,26 @@
         },
         "ember_doi": {
             "description": "doi in ember system",
+            "pattern": "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$",
             "type": "string"
         },
         "emberdandisets": {
             "description": "emberdandiset ids",
+            "items": {
+                "type": "string"
+            },
             "type": [
-                "string",
+                "array",
+                "null"
+            ]
+        },
+        "funding": {
+            "description": "Funding sources supporting this project",
+            "items": {
+                "$ref": "#/$defs/Funding"
+            },
+            "type": [
+                "array",
                 "null"
             ]
         },

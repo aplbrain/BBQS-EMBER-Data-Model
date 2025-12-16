@@ -27,6 +27,7 @@ classes:
 
       ember_doi:
         required: true       ## must be supplied
+        pattern: "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$"
         description: 
           doi in ember system
       
@@ -54,7 +55,8 @@ classes:
           text description of different data tiers
       
       emberdandisets:
-        multivalued: false    ## range is a list
+        multivalued: true    ## range is a list
+        inlined_as_list: true
         description:
           emberdandiset ids
       
@@ -102,14 +104,14 @@ classes:
         multivalued: false   ## range is a list
         description: 
           Identifiers for other related datasets
-  
-  Container:
-    attributes:
-      persons:
+      
+      funding:
+        range: Funding
         multivalued: true
         inlined_as_list: true
-        range: "Person"
+        description: Funding sources supporting this project
 
+  
   Funding:
     description: Funding source information for the project
     attributes:
