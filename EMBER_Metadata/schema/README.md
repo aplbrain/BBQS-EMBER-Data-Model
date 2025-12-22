@@ -1,5 +1,9 @@
 ### Getting Started
-LinkML does not support Python 3.7 or older. Use Python 3.10 or above to avoid compatibility issues.
+This environment is used to validate EMBER project metadata against the BBQS participants data using LinkML. The schema is derived from EMBER-DANDI metadata, and participant metadata is collected from each BBQS team as YAML files.
+
+The steps below walk through setting up a clean environment and installing the LinkML tools needed to validate metadata and generate schemas. Using an isolated environment helps avoid dependency conflicts with other Python projects.
+
+LinkML does not support Python 3.7 or earlier. Use Python 3.10 or newer to avoid compatibility issues.
 Create and activate a  environment:
 ```
 conda create -n linkmlenv python=3.10 -y
