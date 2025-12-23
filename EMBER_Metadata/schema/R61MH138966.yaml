@@ -4,11 +4,11 @@ project_title: >
   A naturalistic multimodal platform for capturing brain-body interactions in people during physical effort-based decision making
 
 project_description: >
-  This project develops a naturalistic multimodal platform to study brain–body interactions
+  This project develops a naturalistic multimodal platform to study brain-body interactions
   during physical effort-based decision making in humans, integrating neural, physiological,
   and behavioral measurements.
 
-ember_doi: []
+# ember_doi: not yet assigned
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

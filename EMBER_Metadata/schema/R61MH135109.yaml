@@ -7,10 +7,10 @@ project_title: >
 project_description: >
   This project investigates autobiographical memory formation in humans during
   real-world navigation by combining synchronized wearable sensors with
-  intracranial EEG recordings, enabling the study of brain–body interactions
+  intracranial EEG recordings, enabling the study of brain-body interactions
   in naturalistic environments.
 
-ember_doi: []
+# ember_doi: not yet assigned
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

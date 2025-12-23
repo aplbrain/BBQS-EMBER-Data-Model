@@ -8,7 +8,7 @@ project_description: >
   interactions in animal models in order to understand their influence on vulnerability
   to drug addiction.
 
-ember_doi: []
+# ember_doi: not yet assigned
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

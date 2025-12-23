@@ -6,6 +6,88 @@ imports:
   - linkml:types
 default_range: string
 
+enums:
+
+  DataModalityEnum:
+    description: Types of data collected in behavioral and neural research
+    permissible_values:
+      electrophysiology:
+        description: Neural electrical recordings (e.g., extracellular, patch clamp)
+      optical_imaging:
+        description: Calcium imaging, voltage imaging, or other optical neural recordings
+      behavioral_video:
+        description: Video recordings of animal or human behavior
+      pose_tracking:
+        description: 2D or 3D pose estimation and motion capture
+      audio:
+        description: Vocalization or sound recordings
+      eye_tracking:
+        description: Gaze and pupil tracking data
+      wearable_sensors:
+        description: Accelerometers, heart rate monitors, and other wearable devices
+      fMRI:
+        description: Functional magnetic resonance imaging
+      EEG:
+        description: Electroencephalography
+      MEG:
+        description: Magnetoencephalography
+      iEEG:
+        description: Intracranial electroencephalography
+      physiological:
+        description: Other physiological measurements (respiration, skin conductance, etc.)
+
+  ProjectPhaseEnum:
+    description: Lifecycle phases for research projects
+    permissible_values:
+      planning:
+        description: Project in planning/design phase, no data collection yet
+      active:
+        description: Project actively collecting or processing data
+      data_collection_complete:
+        description: Data collection finished, processing/analysis ongoing
+      archived:
+        description: Project complete, data archived and available
+
+  ContributorRoleEnum:
+    description: Roles that contributors can have in a project
+    permissible_values:
+      principal_investigator:
+        description: Lead researcher responsible for the project
+      co_investigator:
+        description: Co-investigator sharing research responsibilities
+      data_administrator:
+        description: Primary contact for data management and access
+      data_curator:
+        description: Responsible for data curation and quality control
+      technical_staff:
+        description: Technical or research staff supporting the project
+      collaborator:
+        description: External collaborator contributing to the project
+
+  LicenseEnum:
+    description: Standard data licenses for open data
+    permissible_values:
+      CC0:
+        description: Creative Commons Zero - public domain dedication
+      CC_BY_4.0:
+        description: Creative Commons Attribution 4.0 International
+      CC_BY_SA_4.0:
+        description: Creative Commons Attribution-ShareAlike 4.0 International
+      CC_BY_NC_4.0:
+        description: Creative Commons Attribution-NonCommercial 4.0 International
+      restricted:
+        description: Data requires specific data use agreement
+
+  DataTierEnum:
+    description: EMBER data access tiers
+    permissible_values:
+      emberdandi:
+        description: Open access via EMBER-DANDI archive
+      emberrestricted:
+        description: Restricted access requiring approval
+      embervault:
+        description: Secure vault for PHI/PII data
+
 classes:
 
   EmberProject:
@@ -17,108 +99,210 @@ classes:
 
       project_title:
         required: true       ## title of the project
-        description: 
+        description:
           title of the project
 
       project_description:
         required: true       ## must be supplied
-        description: 
+        description:
           text description of the project
 
+      project_status:
+        range: ProjectPhaseEnum
+        required: false
+        description: >
+          Current lifecycle phase of the project. Helps users understand
+          data availability expectations.
+
       ember_doi:
-        required: true       ## must be supplied
+        required: false      ## optional until DOI is assigned
         pattern: "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$"
-        description: 
-          doi in ember system
-      
+        description: >
+          DOI assigned in the EMBER system. Optional until a DOI has been
+          minted for the project.
+
       data_availability_emberdandi:
         required: true       ## must be supplied
-        range: boolean       
-        description: 
+        range: boolean
+        description:
           yes/no indicating if data are available in emberdandi
-      
+
       data_availability_emberrestricted:
         required: true       ## must be supplied
-        range: boolean       
-        description: 
+        range: boolean
+        description:
           yes/no indicating if data are available in emberrestricted
-      
+
       data_availability_embervault:
         required: true       ## must be supplied
-        range: boolean       
+        range: boolean
         description:
           yes/no indicating if PHI/PII data in embervault
 
       access_tier_summary:
         required: true      ## must be supplied
-        description: 
+        description:
           text description of different data tiers
-      
+
+      license:
+        range: LicenseEnum
+        required: false
+        description: >
+          License governing the use of publicly available data.
+          Use 'restricted' if a data use agreement is required.
+
+      data_use_agreement_required:
+        range: boolean
+        required: false
+        description: >
+          Whether a formal data use agreement must be signed before
+          accessing restricted or sensitive data.
+
       emberdandisets:
-        multivalued: true    
+        multivalued: true
         inlined_as_list: true
         description:
           emberdandiset ids
-      
+
       restricted_datasets:
         multivalued: true
         inlined_as_list: true
-        description: 
-          restricted dataset ids  
+        description:
+          restricted dataset ids
 
       vault_ids:
         multivalued: true
         inlined_as_list: true
-        description: 
+        description:
           embervault ids
-      
+
+      data_tiers:
+        range: DataTier
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Structured representation of data availability across access tiers.
+          Alternative to the legacy boolean/list fields. Consolidates tier
+          information with associated dataset IDs in a single structure.
+
       data_administrator:
         required: true
         range: Contributor
         inlined: true
         description: Primary point of contact for data management
 
+      contributors:
+        range: ContributorWithRole
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          All project contributors with their roles. Provides comprehensive
+          attribution beyond just the data administrator.
+
       last_metadata_update:
         required: true      ## must be supplied
-        description: 
-          date and time of last metadata update
-      
+        range: datetime
+        description: >
+          Date and time of last metadata update in ISO 8601 format
+
       metadata_version:
         required: true      ## must be supplied
-        description: 
+        description:
           version of the metadata
-      
+
       related_publications:
         multivalued: true
         inlined_as_list: true
         description:
           DOIs for related publications
-      
+
       related_repositories:
         multivalued: true
         inlined_as_list: true
-        description: 
+        description:
           Identifiers for related repositories
-      
+
       related_dandisets:
         multivalued: true
         inlined_as_list: true
-        description: 
+        description:
           DOIs for related dandisets
-      
+
       related_data:
         multivalued: true
         inlined_as_list: true
-        description: 
+        description:
           Identifiers for other related datasets
-      
+
+      nwb_compatible:
+        range: boolean
+        required: false
+        description: >
+          Whether project data is stored in or convertible to
+          Neurodata Without Borders (NWB) format.
+
+      nwb_extensions:
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          NWB extensions used by this project (e.g., "ndx-pose",
+          "ndx-events"). Helps users understand data structure.
+
+      bids_compatible:
+        range: boolean
+        required: false
+        description: >
+          Whether project data follows Brain Imaging Data Structure
+          (BIDS) format conventions.
+
+      openneuro_ids:
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          OpenNeuro dataset identifiers for related datasets
+          (e.g., "ds001234").
+
       funding:
         range: Funding
         multivalued: true
         inlined_as_list: true
         description: Funding sources supporting this project
 
-  
+      species:
+        range: Species
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Species studied in this project. Essential for behavioral
+          quantification research to enable cross-species comparisons.
+
+      data_modalities:
+        range: DataModalityEnum
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Types of data collected in this project (e.g., electrophysiology,
+          behavioral video, pose tracking). Enables filtering and discovery
+          of projects by data type.
+
+      keywords:
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Free-text keywords for discoverability. Use terms that describe
+          the research focus, methods, or domain (e.g., "social behavior",
+          "decision making", "motor control", "sleep").
+
+      ontology_terms:
+        range: OntologyTerm
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Standardized ontology terms for semantic interoperability.
+          Use terms from established neuroscience ontologies like NIFSTD,
+          NBO (Neuro Behavior Ontology), or UBERON.
+
+
   Funding:
     description: Funding source information for the project
     attributes:
@@ -144,9 +328,19 @@ classes:
     attributes:
 
       contributor_id:
-        description: Persistent identifier for the contributor (e.g., ORCID)
+        description: >
+          Persistent identifier for the contributor. ORCID is strongly
+          preferred for researchers. Email address is acceptable as fallback.
         identifier: true
         required: true
+
+      orcid:
+        required: false
+        pattern: "^(https://orcid.org/)?\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$"
+        description: >
+          ORCID identifier (e.g., "0000-0002-1825-0097" or full URL
+          "https://orcid.org/0000-0002-1825-0097"). Strongly recommended
+          for researcher identification and attribution.
 
       name:
         required: true
@@ -154,8 +348,100 @@ classes:
 
       email:
         required: false
+        pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
         description: Contact email address
 
       institution:
         required: false
         description: Institutional affiliation
+
+      institution_ror:
+        required: false
+        pattern: "^https://ror\\.org/[a-z0-9]+$"
+        description: >
+          Research Organization Registry (ROR) identifier for the
+          institution (e.g., "https://ror.org/03vek6s52" for Harvard).
+          Enables unambiguous institution identification.
+
+  Species:
+    description: Species studied in the project
+    attributes:
+
+      species_name:
+        required: true
+        description: >
+          Common or scientific name of the species (e.g., "mouse",
+          "Mus musculus", "zebrafish", "human")
+
+      ncbi_taxon_id:
+        required: false
+        pattern: "^\\d+$"
+        description: >
+          NCBI Taxonomy identifier for the species (numeric ID only,
+          e.g., "10090" for Mus musculus)
+
+      strain:
+        required: false
+        description: >
+          Strain, subspecies, or variant information
+          (e.g., "C57BL/6J", "wild-type")
+
+  ContributorWithRole:
+    description: A contributor with their role in the project
+    attributes:
+
+      contributor:
+        range: Contributor
+        inlined: true
+        required: true
+        description: The contributor's information
+
+      role:
+        range: ContributorRoleEnum
+        required: true
+        description: The contributor's role in the project
+
+  DataTier:
+    description: >
+      Data availability information for a specific access tier.
+      Consolidates the is_available flag with associated dataset IDs.
+    attributes:
+
+      tier:
+        range: DataTierEnum
+        required: true
+        description: The access tier (emberdandi, emberrestricted, embervault)
+
+      is_available:
+        range: boolean
+        required: true
+        description: Whether data is available in this tier
+
+      dataset_ids:
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Identifiers for datasets available in this tier
+          (dandiset IDs, restricted dataset IDs, or vault IDs)
+
+  OntologyTerm:
+    description: >
+      A term from a controlled ontology for semantic annotation.
+      Enables interoperability with other neuroscience resources.
+    attributes:
+
+      term_id:
+        required: true
+        description: >
+          Ontology term identifier in CURIE format
+          (e.g., "NBO:0000015", "UBERON:0000955", "NIFSTD:birnlex_796")
+
+      term_label:
+        required: true
+        description: Human-readable label for the term
+
+      ontology:
+        required: false
+        description: >
+          Source ontology name (e.g., "NBO", "UBERON", "NIFSTD").
+          Can be inferred from term_id prefix but explicit is clearer.
