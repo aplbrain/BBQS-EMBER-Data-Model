@@ -1,10 +1,10 @@
 project_id: R34DA061925
 
 project_title: >
-  Building an “AI Forest” to identify the social and environmental factors underlying complex behavioral traits in wild primates
+  Building an "AI Forest" to identify the social and environmental factors underlying complex behavioral traits in wild primates
 
 project_description: >
-  This project aims to develop an AI-driven framework (“AI Forest”) to identify and quantify
+  This project aims to develop an AI-driven framework ("AI Forest") to identify and quantify
   social and environmental factors that shape complex behavioral traits in wild primates,
   enabling large-scale, naturalistic behavioral analysis.
 
@@ -39,5 +39,5 @@ funding:
   - funding_institute: NIH
     award_number: R34DA061925
     award_title: >
-      Building an “AI Forest” to identify the social and environmental factors underlying complex behavioral traits in wild primates
+      Building an "AI Forest" to identify the social and environmental factors underlying complex behavioral traits in wild primates
     funding_url: https://reporter.nih.gov/project-details/11035427
