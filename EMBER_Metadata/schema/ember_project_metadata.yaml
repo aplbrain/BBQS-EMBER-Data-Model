@@ -57,6 +57,7 @@ classes:
       emberdandisets:
         multivalued: true    
         inlined_as_list: true
+        pattern: "^DANDI:\\d{6}$"
         description:
           emberdandiset ids
       
@@ -144,9 +145,13 @@ classes:
     attributes:
 
       contributor_id:
-        description: Persistent identifier for the contributor (e.g., ORCID)
+        description: Internal identifier for the contributor within EMBER metadata
         identifier: true
         required: true
+      
+      external_identifiers:
+        multivalued: true
+        description: External identifiers such as ORCID
 
       name:
         required: true

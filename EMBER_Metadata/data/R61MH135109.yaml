@@ -10,7 +10,7 @@ project_description: >
   intracranial EEG recordings, enabling the study of brain–body interactions
   in naturalistic environments.
 
-ember_doi: []
+ember_doi: null
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

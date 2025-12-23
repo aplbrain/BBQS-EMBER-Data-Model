@@ -1,12 +1,12 @@
-project_id: R61MH138705
+project_id: U01DA063534
 
-project_title: Neural and Behavioral Correlates of Live Face-to-Face Interactions
+project_title: Toward comprehensive models of naturalistic cooperation and competition in primates
 
 project_description: >
-  Study investigating neural and behavioral correlates during naturalistic,
-  face-to-face human interactions.
+  Project focused on modeling cooperation and competition in primates
+  using naturalistic behavioral paradigms.
 
-ember_doi: []
+ember_doi: null
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false
@@ -20,9 +20,9 @@ restricted_datasets: []
 vault_ids: []
 
 data_administrator:
-  contributor_id: joy.hirsch@yale.edu
-  name: Joy Hirsch
-  email: joy.hirsch@yale.edu
+  contributor_id: steve.chang@yale.edu
+  name: Steve W C Chang
+  email: steve.chang@yale.edu
   institution: Yale University
 
 last_metadata_update: "2025-01-10T12:00:00Z"
@@ -35,6 +35,6 @@ related_data: []
 
 funding:
   - funding_institute: NIH
-    award_number: R61MH138705
-    award_title: Neural and Behavioral Correlates of Live Face-to-Face Interactions
+    award_number: U01DA063534
+    award_title: Toward comprehensive models of naturalistic cooperation and competition in primates
     funding_url: ""
