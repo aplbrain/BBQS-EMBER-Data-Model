@@ -231,9 +231,37 @@ classes:
       related_data:
         multivalued: true
         inlined_as_list: true
-        description: 
+        description:
           Identifiers for other related datasets
-      
+
+      nwb_compatible:
+        range: boolean
+        required: false
+        description: >
+          Whether project data is stored in or convertible to
+          Neurodata Without Borders (NWB) format.
+
+      nwb_extensions:
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          NWB extensions used by this project (e.g., "ndx-pose",
+          "ndx-events"). Helps users understand data structure.
+
+      bids_compatible:
+        range: boolean
+        required: false
+        description: >
+          Whether project data follows Brain Imaging Data Structure
+          (BIDS) format conventions.
+
+      openneuro_ids:
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          OpenNeuro dataset identifiers for related datasets
+          (e.g., "ds001234").
+
       funding:
         range: Funding
         multivalued: true
