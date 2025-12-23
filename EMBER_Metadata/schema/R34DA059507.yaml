@@ -23,7 +23,7 @@ vault_ids: []
 data_administrator:
   contributor_id: marcschm@sas.upenn.edu
   name: Marc F Schmidt
-  email: Mmarcschm@sas.upenn.edu
+  email: marcschm@sas.upenn.edu
   institution: University of Pennsylvania
 
 last_metadata_update: "2025-01-10T12:00:00Z"
