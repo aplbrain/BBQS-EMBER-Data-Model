@@ -264,9 +264,19 @@ classes:
     attributes:
 
       contributor_id:
-        description: Persistent identifier for the contributor (e.g., ORCID)
+        description: >
+          Persistent identifier for the contributor. ORCID is strongly
+          preferred for researchers. Email address is acceptable as fallback.
         identifier: true
         required: true
+
+      orcid:
+        required: false
+        pattern: "^(https://orcid.org/)?\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$"
+        description: >
+          ORCID identifier (e.g., "0000-0002-1825-0097" or full URL
+          "https://orcid.org/0000-0002-1825-0097"). Strongly recommended
+          for researcher identification and attribution.
 
       name:
         required: true
