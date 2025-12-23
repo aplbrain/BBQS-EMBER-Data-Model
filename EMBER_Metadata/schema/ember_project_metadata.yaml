@@ -120,7 +120,15 @@ classes:
         inlined_as_list: true
         description: Funding sources supporting this project
 
-  
+      species:
+        range: Species
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Species studied in this project. Essential for behavioral
+          quantification research to enable cross-species comparisons.
+
+
   Funding:
     description: Funding source information for the project
     attributes:
@@ -162,3 +170,26 @@ classes:
       institution:
         required: false
         description: Institutional affiliation
+
+  Species:
+    description: Species studied in the project
+    attributes:
+
+      species_name:
+        required: true
+        description: >
+          Common or scientific name of the species (e.g., "mouse",
+          "Mus musculus", "zebrafish", "human")
+
+      ncbi_taxon_id:
+        required: false
+        pattern: "^\\d+$"
+        description: >
+          NCBI Taxonomy identifier for the species (numeric ID only,
+          e.g., "10090" for Mus musculus)
+
+      strain:
+        required: false
+        description: >
+          Strain, subspecies, or variant information
+          (e.g., "C57BL/6J", "wild-type")
