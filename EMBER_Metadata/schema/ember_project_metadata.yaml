@@ -257,6 +257,23 @@ classes:
           behavioral video, pose tracking). Enables filtering and discovery
           of projects by data type.
 
+      keywords:
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Free-text keywords for discoverability. Use terms that describe
+          the research focus, methods, or domain (e.g., "social behavior",
+          "decision making", "motor control", "sleep").
+
+      ontology_terms:
+        range: OntologyTerm
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Standardized ontology terms for semantic interoperability.
+          Use terms from established neuroscience ontologies like NIFSTD,
+          NBO (Neuro Behavior Ontology), or UBERON.
+
 
   Funding:
     description: Funding source information for the project
@@ -370,3 +387,25 @@ classes:
         description: >
           Identifiers for datasets available in this tier
           (dandiset IDs, restricted dataset IDs, or vault IDs)
+
+  OntologyTerm:
+    description: >
+      A term from a controlled ontology for semantic annotation.
+      Enables interoperability with other neuroscience resources.
+    attributes:
+
+      term_id:
+        required: true
+        description: >
+          Ontology term identifier in CURIE format
+          (e.g., "NBO:0000015", "UBERON:0000955", "NIFSTD:birnlex_796")
+
+      term_label:
+        required: true
+        description: Human-readable label for the term
+
+      ontology:
+        required: false
+        description: >
+          Source ontology name (e.g., "NBO", "UBERON", "NIFSTD").
+          Can be inferred from term_id prefix but explicit is clearer.
