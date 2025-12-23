@@ -81,8 +81,9 @@ classes:
 
       last_metadata_update:
         required: true      ## must be supplied
-        description: 
-          date and time of last metadata update
+        range: datetime
+        description: >
+          Date and time of last metadata update in ISO 8601 format
       
       metadata_version:
         required: true      ## must be supplied
