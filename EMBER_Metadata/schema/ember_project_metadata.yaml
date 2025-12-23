@@ -54,20 +54,20 @@ classes:
         description: 
           text description of different data tiers
       
-      emberdandisets:
+      access_level_emberdandisets:
         multivalued: true    
         inlined_as_list: true
         pattern: "^DANDI:\\d{6}$"
         description:
           emberdandiset ids
       
-      restricted_datasets:
+      access_level_restricted_datasets:
         multivalued: true
         inlined_as_list: true
         description: 
           restricted dataset ids  
 
-      vault_ids:
+      access_level_access_vault_ids:
         multivalued: true
         inlined_as_list: true
         description: 
