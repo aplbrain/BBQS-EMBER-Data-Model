@@ -99,7 +99,7 @@ classes:
 
       project_title:
         required: true       ## title of the project
-        description: 
+        description:
           title of the project
 
       project_description:
@@ -120,22 +120,22 @@ classes:
         description: >
           DOI assigned in the EMBER system. Optional until a DOI has been
           minted for the project.
-      
+
       data_availability_emberdandi:
         required: true       ## must be supplied
-        range: boolean       
-        description: 
+        range: boolean
+        description:
           yes/no indicating if data are available in emberdandi
-      
+
       data_availability_emberrestricted:
         required: true       ## must be supplied
-        range: boolean       
-        description: 
+        range: boolean
+        description:
           yes/no indicating if data are available in emberrestricted
-      
+
       data_availability_embervault:
         required: true       ## must be supplied
-        range: boolean       
+        range: boolean
         description:
           yes/no indicating if PHI/PII data in embervault
 
@@ -159,16 +159,16 @@ classes:
           accessing restricted or sensitive data.
 
       emberdandisets:
-        multivalued: true    
+        multivalued: true
         inlined_as_list: true
         description:
           emberdandiset ids
-      
+
       restricted_datasets:
         multivalued: true
         inlined_as_list: true
-        description: 
-          restricted dataset ids  
+        description:
+          restricted dataset ids
 
       vault_ids:
         multivalued: true
@@ -204,30 +204,30 @@ classes:
         range: datetime
         description: >
           Date and time of last metadata update in ISO 8601 format
-      
+
       metadata_version:
         required: true      ## must be supplied
-        description: 
+        description:
           version of the metadata
-      
+
       related_publications:
         multivalued: true
         inlined_as_list: true
         description:
           DOIs for related publications
-      
+
       related_repositories:
         multivalued: true
         inlined_as_list: true
-        description: 
+        description:
           Identifiers for related repositories
-      
+
       related_dandisets:
         multivalued: true
         inlined_as_list: true
-        description: 
+        description:
           DOIs for related dandisets
-      
+
       related_data:
         multivalued: true
         inlined_as_list: true
