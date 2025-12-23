@@ -156,6 +156,7 @@ classes:
 
       email:
         required: false
+        pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
         description: Contact email address
 
       institution:
