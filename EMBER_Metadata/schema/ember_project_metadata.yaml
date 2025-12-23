@@ -6,6 +6,36 @@ imports:
   - linkml:types
 default_range: string
 
+enums:
+
+  DataModalityEnum:
+    description: Types of data collected in behavioral and neural research
+    permissible_values:
+      electrophysiology:
+        description: Neural electrical recordings (e.g., extracellular, patch clamp)
+      optical_imaging:
+        description: Calcium imaging, voltage imaging, or other optical neural recordings
+      behavioral_video:
+        description: Video recordings of animal or human behavior
+      pose_tracking:
+        description: 2D or 3D pose estimation and motion capture
+      audio:
+        description: Vocalization or sound recordings
+      eye_tracking:
+        description: Gaze and pupil tracking data
+      wearable_sensors:
+        description: Accelerometers, heart rate monitors, and other wearable devices
+      fMRI:
+        description: Functional magnetic resonance imaging
+      EEG:
+        description: Electroencephalography
+      MEG:
+        description: Magnetoencephalography
+      iEEG:
+        description: Intracranial electroencephalography
+      physiological:
+        description: Other physiological measurements (respiration, skin conductance, etc.)
+
 classes:
 
   EmberProject:
@@ -127,6 +157,15 @@ classes:
         description: >
           Species studied in this project. Essential for behavioral
           quantification research to enable cross-species comparisons.
+
+      data_modalities:
+        range: DataModalityEnum
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Types of data collected in this project (e.g., electrophysiology,
+          behavioral video, pose tracking). Enables filtering and discovery
+          of projects by data type.
 
 
   Funding:
