@@ -78,6 +78,16 @@ enums:
       restricted:
         description: Data requires specific data use agreement
 
+  DataTierEnum:
+    description: EMBER data access tiers
+    permissible_values:
+      emberdandi:
+        description: Open access via EMBER-DANDI archive
+      emberrestricted:
+        description: Restricted access requiring approval
+      embervault:
+        description: Secure vault for PHI/PII data
+
 classes:
 
   EmberProject:
@@ -163,9 +173,18 @@ classes:
       vault_ids:
         multivalued: true
         inlined_as_list: true
-        description: 
+        description:
           embervault ids
-      
+
+      data_tiers:
+        range: DataTier
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Structured representation of data availability across access tiers.
+          Alternative to the legacy boolean/list fields. Consolidates tier
+          information with associated dataset IDs in a single structure.
+
       data_administrator:
         required: true
         range: Contributor
@@ -328,3 +347,26 @@ classes:
         range: ContributorRoleEnum
         required: true
         description: The contributor's role in the project
+
+  DataTier:
+    description: >
+      Data availability information for a specific access tier.
+      Consolidates the is_available flag with associated dataset IDs.
+    attributes:
+
+      tier:
+        range: DataTierEnum
+        required: true
+        description: The access tier (emberdandi, emberrestricted, embervault)
+
+      is_available:
+        range: boolean
+        required: true
+        description: Whether data is available in this tier
+
+      dataset_ids:
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          Identifiers for datasets available in this tier
+          (dandiset IDs, restricted dataset IDs, or vault IDs)
