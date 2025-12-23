@@ -355,6 +355,14 @@ classes:
         required: false
         description: Institutional affiliation
 
+      institution_ror:
+        required: false
+        pattern: "^https://ror\\.org/[a-z0-9]+$"
+        description: >
+          Research Organization Registry (ROR) identifier for the
+          institution (e.g., "https://ror.org/03vek6s52" for Harvard).
+          Enables unambiguous institution identification.
+
   Species:
     description: Species studied in the project
     attributes:
