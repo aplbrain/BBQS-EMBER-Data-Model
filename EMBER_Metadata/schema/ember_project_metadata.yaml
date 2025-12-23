@@ -36,6 +36,18 @@ enums:
       physiological:
         description: Other physiological measurements (respiration, skin conductance, etc.)
 
+  ProjectPhaseEnum:
+    description: Lifecycle phases for research projects
+    permissible_values:
+      planning:
+        description: Project in planning/design phase, no data collection yet
+      active:
+        description: Project actively collecting or processing data
+      data_collection_complete:
+        description: Data collection finished, processing/analysis ongoing
+      archived:
+        description: Project complete, data archived and available
+
 classes:
 
   EmberProject:
@@ -52,8 +64,15 @@ classes:
 
       project_description:
         required: true       ## must be supplied
-        description: 
+        description:
           text description of the project
+
+      project_status:
+        range: ProjectPhaseEnum
+        required: false
+        description: >
+          Current lifecycle phase of the project. Helps users understand
+          data availability expectations.
 
       ember_doi:
         required: false      ## optional until DOI is assigned
