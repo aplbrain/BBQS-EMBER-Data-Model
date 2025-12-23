@@ -64,6 +64,20 @@ enums:
       collaborator:
         description: External collaborator contributing to the project
 
+  LicenseEnum:
+    description: Standard data licenses for open data
+    permissible_values:
+      CC0:
+        description: Creative Commons Zero - public domain dedication
+      CC_BY_4.0:
+        description: Creative Commons Attribution 4.0 International
+      CC_BY_SA_4.0:
+        description: Creative Commons Attribution-ShareAlike 4.0 International
+      CC_BY_NC_4.0:
+        description: Creative Commons Attribution-NonCommercial 4.0 International
+      restricted:
+        description: Data requires specific data use agreement
+
 classes:
 
   EmberProject:
@@ -117,9 +131,23 @@ classes:
 
       access_tier_summary:
         required: true      ## must be supplied
-        description: 
+        description:
           text description of different data tiers
-      
+
+      license:
+        range: LicenseEnum
+        required: false
+        description: >
+          License governing the use of publicly available data.
+          Use 'restricted' if a data use agreement is required.
+
+      data_use_agreement_required:
+        range: boolean
+        required: false
+        description: >
+          Whether a formal data use agreement must be signed before
+          accessing restricted or sensitive data.
+
       emberdandisets:
         multivalued: true    
         inlined_as_list: true
