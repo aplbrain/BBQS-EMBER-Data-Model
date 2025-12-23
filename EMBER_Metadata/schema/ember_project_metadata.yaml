@@ -48,6 +48,22 @@ enums:
       archived:
         description: Project complete, data archived and available
 
+  ContributorRoleEnum:
+    description: Roles that contributors can have in a project
+    permissible_values:
+      principal_investigator:
+        description: Lead researcher responsible for the project
+      co_investigator:
+        description: Co-investigator sharing research responsibilities
+      data_administrator:
+        description: Primary contact for data management and access
+      data_curator:
+        description: Responsible for data curation and quality control
+      technical_staff:
+        description: Technical or research staff supporting the project
+      collaborator:
+        description: External collaborator contributing to the project
+
 classes:
 
   EmberProject:
@@ -127,6 +143,14 @@ classes:
         range: Contributor
         inlined: true
         description: Primary point of contact for data management
+
+      contributors:
+        range: ContributorWithRole
+        multivalued: true
+        inlined_as_list: true
+        description: >
+          All project contributors with their roles. Provides comprehensive
+          attribution beyond just the data administrator.
 
       last_metadata_update:
         required: true      ## must be supplied
@@ -251,3 +275,18 @@ classes:
         description: >
           Strain, subspecies, or variant information
           (e.g., "C57BL/6J", "wild-type")
+
+  ContributorWithRole:
+    description: A contributor with their role in the project
+    attributes:
+
+      contributor:
+        range: Contributor
+        inlined: true
+        required: true
+        description: The contributor's information
+
+      role:
+        range: ContributorRoleEnum
+        required: true
+        description: The contributor's role in the project
