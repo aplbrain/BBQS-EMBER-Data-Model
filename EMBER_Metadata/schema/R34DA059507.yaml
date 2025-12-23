@@ -7,7 +7,7 @@ project_description: >
   dynamics underlying complex social behaviors in gregarious songbirds
   using multimodal sensing and computational analysis.
 
-ember_doi: []
+# ember_doi: not yet assigned
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

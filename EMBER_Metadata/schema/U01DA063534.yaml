@@ -6,7 +6,7 @@ project_description: >
   Project focused on modeling cooperation and competition in primates
   using naturalistic behavioral paradigms.
 
-ember_doi: []
+# ember_doi: not yet assigned
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

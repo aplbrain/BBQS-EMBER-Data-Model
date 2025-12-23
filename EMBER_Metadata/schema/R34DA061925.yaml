@@ -8,7 +8,7 @@ project_description: >
   social and environmental factors that shape complex behavioral traits in wild primates,
   enabling large-scale, naturalistic behavioral analysis.
 
-ember_doi: []
+# ember_doi: not yet assigned
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

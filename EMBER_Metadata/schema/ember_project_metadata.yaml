@@ -26,10 +26,11 @@ classes:
           text description of the project
 
       ember_doi:
-        required: true       ## must be supplied
+        required: false      ## optional until DOI is assigned
         pattern: "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$"
-        description: 
-          doi in ember system
+        description: >
+          DOI assigned in the EMBER system. Optional until a DOI has been
+          minted for the project.
       
       data_availability_emberdandi:
         required: true       ## must be supplied
