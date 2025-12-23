@@ -8,7 +8,7 @@ project_description: >
   relationships across genetically tractable species, enabling comparative
   and high-resolution analysis of neural activity during naturalistic behavior.
 
-ember_doi: null
+ember_doi: ""
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

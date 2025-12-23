@@ -6,7 +6,7 @@ project_title: >
 project_description: >
   This project focuses on establishing and characterizing novel mutant mouse models to support addiction research, providing standardized resources for the research community.
 
-ember_doi: null
+ember_doi: ""
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

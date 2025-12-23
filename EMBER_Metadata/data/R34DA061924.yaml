@@ -8,7 +8,7 @@ project_description: >
   dynamically transition across scales in interacting animals, with the goal of
   developing integrative models of social behavior.
 
-ember_doi: null
+ember_doi: ""
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

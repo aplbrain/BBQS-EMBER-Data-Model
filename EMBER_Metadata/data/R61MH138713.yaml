@@ -8,7 +8,7 @@ project_description: >
   privacy-preserving LiDAR and millimeter-wave sensing technologies to track and model
   attention states in real-world, naturalistic environments.
 
-ember_doi: null
+ember_doi: ""
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

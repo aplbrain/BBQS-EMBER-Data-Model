@@ -9,7 +9,7 @@ project_description: >
   learning to characterize mental states using neural, physiological, and behavioral
   data collected in naturalistic environments.
 
-ember_doi: null
+ember_doi: ""
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false
