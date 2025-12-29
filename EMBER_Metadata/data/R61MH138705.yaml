@@ -15,9 +15,9 @@ data_availability_embervault: false
 access_tier_summary: >
   Data availability and access tiers have not yet been assigned.
 
-emberdandisets: []
-restricted_datasets: []
-vault_ids: []
+access_level_emberdandisets: []
+access_level_restricted_datasets: []
+access_level_access_vault_ids: []
 
 data_administrator:
   contributor_id: joy.hirsch@yale.edu

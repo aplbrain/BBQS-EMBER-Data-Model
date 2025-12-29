@@ -5,13 +5,23 @@
             "description": "Person or organization contributing to the project",
             "properties": {
                 "contributor_id": {
-                    "description": "Persistent identifier for the contributor (e.g., ORCID)",
+                    "description": "Internal identifier for the contributor within EMBER metadata",
                     "type": "string"
                 },
                 "email": {
                     "description": "Contact email address",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "external_identifiers": {
+                    "description": "External identifiers such as ORCID",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -38,6 +48,37 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "access_level_access_vault_ids": {
+                    "description": "embervault ids",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "access_level_emberdandisets": {
+                    "description": "emberdandiset ids",
+                    "items": {
+                        "pattern": "^EMBER-DANDI:\\d{6}$",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "access_level_restricted_datasets": {
+                    "description": "restricted dataset ids",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "access_tier_summary": {
                     "description": "text description of different data tiers",
                     "type": "string"
@@ -59,19 +100,21 @@
                     "type": "boolean"
                 },
                 "ember_doi": {
-                    "description": "doi in ember system",
-                    "pattern": "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$",
+                    "anyOf": [
+                        {
+                            "pattern": "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$",
+                            "type": "string"
+                        },
+                        {
+                            "const": "",
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "DOI in EMBER system (empty string allowed until assigned)",
                     "type": "string"
-                },
-                "emberdandisets": {
-                    "description": "emberdandiset ids",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
                 },
                 "funding": {
                     "description": "Funding sources supporting this project",
@@ -144,33 +187,12 @@
                         "array",
                         "null"
                     ]
-                },
-                "restricted_datasets": {
-                    "description": "restricted dataset ids",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "vault_ids": {
-                    "description": "embervault ids",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
                 }
             },
             "required": [
                 "project_id",
                 "project_title",
                 "project_description",
-                "ember_doi",
                 "data_availability_emberdandi",
                 "data_availability_emberrestricted",
                 "data_availability_embervault",
@@ -223,6 +245,37 @@
     "description": "",
     "metamodel_version": "1.7.0",
     "properties": {
+        "access_level_access_vault_ids": {
+            "description": "embervault ids",
+            "items": {
+                "type": "string"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "access_level_emberdandisets": {
+            "description": "emberdandiset ids",
+            "items": {
+                "pattern": "^EMBER-DANDI:\\d{6}$",
+                "type": "string"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "access_level_restricted_datasets": {
+            "description": "restricted dataset ids",
+            "items": {
+                "type": "string"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
         "access_tier_summary": {
             "description": "text description of different data tiers",
             "type": "string"
@@ -244,19 +297,21 @@
             "type": "boolean"
         },
         "ember_doi": {
-            "description": "doi in ember system",
-            "pattern": "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$",
+            "anyOf": [
+                {
+                    "pattern": "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$",
+                    "type": "string"
+                },
+                {
+                    "const": "",
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                }
+            ],
+            "description": "DOI in EMBER system (empty string allowed until assigned)",
             "type": "string"
-        },
-        "emberdandisets": {
-            "description": "emberdandiset ids",
-            "items": {
-                "type": "string"
-            },
-            "type": [
-                "array",
-                "null"
-            ]
         },
         "funding": {
             "description": "Funding sources supporting this project",
@@ -329,33 +384,12 @@
                 "array",
                 "null"
             ]
-        },
-        "restricted_datasets": {
-            "description": "restricted dataset ids",
-            "items": {
-                "type": "string"
-            },
-            "type": [
-                "array",
-                "null"
-            ]
-        },
-        "vault_ids": {
-            "description": "embervault ids",
-            "items": {
-                "type": "string"
-            },
-            "type": [
-                "array",
-                "null"
-            ]
         }
     },
     "required": [
         "project_id",
         "project_title",
         "project_description",
-        "ember_doi",
         "data_availability_emberdandi",
         "data_availability_emberrestricted",
         "data_availability_embervault",

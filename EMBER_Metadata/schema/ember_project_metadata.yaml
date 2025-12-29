@@ -26,11 +26,14 @@ classes:
           text description of the project
 
       ember_doi:
-        required: true       ## must be supplied
-        pattern: "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$"
-        description: 
-          doi in ember system
-      
+        required: false
+        any_of:
+          - range: string
+            pattern: "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$"
+          - range: string
+            equals_string: ""
+        description: DOI in EMBER system (empty string allowed until assigned)
+
       data_availability_emberdandi:
         required: true       ## must be supplied
         range: boolean       
@@ -57,7 +60,7 @@ classes:
       access_level_emberdandisets:
         multivalued: true    
         inlined_as_list: true
-        pattern: "^DANDI:\\d{6}$"
+        pattern: "^EMBER-DANDI:\\d{6}$"
         description:
           emberdandiset ids
       
