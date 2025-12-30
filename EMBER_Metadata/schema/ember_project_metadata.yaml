@@ -1,0 +1,169 @@
+id: https://w3id.org/emberarchive/emberproject
+name: emberproject
+prefixes:
+  linkml: https://w3id.org/emberarchive/
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+
+  EmberProject:
+    tree_root: true
+    attributes:
+
+      project_id:
+        identifier: true     ## unique key for project
+
+      project_title:
+        required: true       ## title of the project
+        description: 
+          title of the project
+
+      project_description:
+        required: true       ## must be supplied
+        description: 
+          text description of the project
+
+      ember_doi:
+        required: false
+        any_of:
+          - range: string
+            pattern: "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$"
+          - range: string
+            equals_string: ""
+        description: DOI in EMBER system (empty string allowed until assigned)
+
+      data_availability_emberdandi:
+        required: true       ## must be supplied
+        range: boolean       
+        description: 
+          yes/no indicating if data are available in emberdandi
+      
+      data_availability_emberrestricted:
+        required: true       ## must be supplied
+        range: boolean       
+        description: 
+          yes/no indicating if data are available in emberrestricted
+      
+      data_availability_embervault:
+        required: true       ## must be supplied
+        range: boolean       
+        description:
+          yes/no indicating if PHI/PII data in embervault
+
+      access_tier_summary:
+        required: true      ## must be supplied
+        description: 
+          text description of different data tiers
+      
+      access_level_emberdandisets:
+        multivalued: true    
+        inlined_as_list: true
+        pattern: "^EMBER-DANDI:\\d{6}$"
+        description:
+          emberdandiset ids
+      
+      access_level_restricted_datasets:
+        multivalued: true
+        inlined_as_list: true
+        description: 
+          restricted dataset ids  
+
+      access_level_access_vault_ids:
+        multivalued: true
+        inlined_as_list: true
+        description: 
+          embervault ids
+      
+      data_administrator:
+        required: true
+        range: Contributor
+        inlined: true
+        description: Primary point of contact for data management
+
+      last_metadata_update:
+        required: true      ## must be supplied
+        description: 
+          date and time of last metadata update
+      
+      metadata_version:
+        required: true      ## must be supplied
+        description: 
+          version of the metadata
+      
+      related_publications:
+        multivalued: true
+        inlined_as_list: true
+        description:
+          DOIs for related publications
+      
+      related_repositories:
+        multivalued: true
+        inlined_as_list: true
+        description: 
+          Identifiers for related repositories
+      
+      related_dandisets:
+        multivalued: true
+        inlined_as_list: true
+        description: 
+          DOIs for related dandisets
+      
+      related_data:
+        multivalued: true
+        inlined_as_list: true
+        description: 
+          Identifiers for other related datasets
+      
+      funding:
+        range: Funding
+        multivalued: true
+        inlined_as_list: true
+        description: Funding sources supporting this project
+
+  
+  Funding:
+    description: Funding source information for the project
+    attributes:
+
+      funding_institute:
+        required: true
+        description: Name of the funding institute (e.g., NIH, NSF, DARPA)
+
+      award_number:
+        required: true
+        description: Funding award or grant number
+
+      award_title:
+        required: false
+        description: Title of the funded award
+
+      funding_url:
+        required: false
+        description: URL to the funding announcement or award page
+
+  Contributor:
+    description: Person or organization contributing to the project
+    attributes:
+
+      contributor_id:
+        description: Internal identifier for the contributor within EMBER metadata
+        identifier: true
+        required: true
+      
+      external_identifiers:
+        multivalued: true
+        description: External identifiers such as ORCID
+
+      name:
+        required: true
+        description: Full name of the contributor
+
+      email:
+        required: false
+        description: Contact email address
+
+      institution:
+        required: false
+        description: Institutional affiliation

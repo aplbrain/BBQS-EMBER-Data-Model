@@ -1,0 +1,40 @@
+project_id: U01DA063534
+
+project_title: Toward comprehensive models of naturalistic cooperation and competition in primates
+
+project_description: >
+  Project focused on modeling cooperation and competition in primates
+  using naturalistic behavioral paradigms.
+
+ember_doi: ""
+
+data_availability_emberdandi: false
+data_availability_emberrestricted: false
+data_availability_embervault: false
+
+access_tier_summary: >
+  Data availability and access tiers have not yet been assigned.
+
+access_level_emberdandisets: []
+access_level_restricted_datasets: []
+access_level_access_vault_ids: []
+
+data_administrator:
+  contributor_id: steve.chang@yale.edu
+  name: Steve W C Chang
+  email: steve.chang@yale.edu
+  institution: Yale University
+
+last_metadata_update: "2025-01-10T12:00:00Z"
+metadata_version: "0.1.0"
+
+related_publications: []
+related_repositories: []
+related_dandisets: []
+related_data: []
+
+funding:
+  - funding_institute: NIH
+    award_number: U01DA063534
+    award_title: Toward comprehensive models of naturalistic cooperation and competition in primates
+    funding_url: ""
