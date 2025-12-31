@@ -1,0 +1,43 @@
+project_id: R34DA062119
+
+project_title: >
+  The International Development Project (IDP): An international collaboration for the standardized study of experience-dependent brain and behavioral development
+
+project_description: >
+  This project establishes an international collaboration to standardize the study of
+  experience-dependent brain and behavioral development, with a focus on reproducibility,
+  cross-site harmonization, and longitudinal developmental measures.
+
+ember_doi: ""
+
+data_availability_emberdandi: false
+data_availability_emberrestricted: false
+data_availability_embervault: false
+
+access_tier_summary: >
+  Data availability and access tiers have not yet been finalized for this project.
+
+access_level_emberdandisets: []
+access_level_restricted_datasets: []
+access_level_access_vault_ids: []
+
+data_administrator:
+  contributor_id: linda.wilbrecht@berkeley.edu
+  name: Linda E Wilbrecht
+  email: linda.wilbrecht@berkeley.edu
+  institution: University of California Berkeley
+
+last_metadata_update: "2025-01-10T12:00:00Z"
+metadata_version: "0.1.0"
+
+related_publications: []
+related_repositories: []
+related_dandisets: []
+related_data: []
+
+funding:
+  - funding_institute: NIH
+    award_number: R34DA062119
+    award_title: >
+      The International Development Project (IDP): An international collaboration for the standardized study of experience-dependent brain and behavioral development
+    funding_url: https://reporter.nih.gov/project-details/11045432

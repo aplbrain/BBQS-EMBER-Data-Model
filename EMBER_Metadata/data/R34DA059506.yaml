@@ -1,0 +1,41 @@
+project_id: R34DA059506
+
+project_title: High-resolution 3D tracking of social behaviors for deep phenotypic analysis
+
+project_description: >
+  This project focuses on high-resolution three-dimensional tracking of social
+  behaviors to enable deep phenotypic analysis across naturalistic behavioral
+  contexts.
+
+ember_doi: ""
+
+data_availability_emberdandi: false
+data_availability_emberrestricted: false
+data_availability_embervault: false
+
+access_tier_summary: >
+  Data availability and access tiers have not yet been assigned.
+
+access_level_emberdandisets: []
+access_level_restricted_datasets: []
+access_level_access_vault_ids: []
+
+data_administrator:
+  contributor_id: timothy.dunn@duke.edu
+  name: Timothy William Dunn
+  email: timothy.dunn@duke.edu
+  institution: Duke University
+
+last_metadata_update: "2025-01-10T12:00:00Z"
+metadata_version: "0.1.0"
+
+related_publications: []
+related_repositories: []
+related_dandisets: []
+related_data: []
+
+funding:
+  - funding_institute: NIH
+    award_number: R34DA059506
+    award_title: High-resolution 3D tracking of social behaviors for deep phenotypic analysis
+    funding_url: https://reporter.nih.gov/project-details/10786685

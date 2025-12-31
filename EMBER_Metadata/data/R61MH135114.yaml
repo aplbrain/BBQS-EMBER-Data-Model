@@ -1,0 +1,43 @@
+project_id: R61MH135114
+
+project_title: >
+  Integrated Movement Tracking for Pediatric OPM-MEG Studies of Intellectual Disability
+
+project_description: >
+  This project develops integrated movement tracking methods to support pediatric
+  OPM-MEG studies, with the goal of improving data quality and interpretability
+  in studies of intellectual disability during naturalistic behavior.
+
+ember_doi: ""
+
+data_availability_emberdandi: false
+data_availability_emberrestricted: false
+data_availability_embervault: false
+
+access_tier_summary: >
+  Data availability and access tiers have not yet been finalized for this project.
+
+access_level_emberdandisets: []
+access_level_restricted_datasets: []
+access_level_access_vault_ids: []
+
+data_administrator:
+  contributor_id: jwelshp@gmail.com
+  name: John P Welsh
+  email: jwelshp@gmail.com
+  institution: Seattle Children's Hospital
+
+last_metadata_update: "2025-01-10T12:00:00Z"
+metadata_version: "0.1.0"
+
+related_publications: []
+related_repositories: []
+related_dandisets: []
+related_data: []
+
+funding:
+  - funding_institute: NIH
+    award_number: R61MH135114
+    award_title: >
+      Integrated Movement Tracking for Pediatric OPM-MEG Studies of Intellectual Disability
+    funding_url: https://reporter.nih.gov/project-details/10792146

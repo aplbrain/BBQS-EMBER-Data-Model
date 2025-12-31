@@ -1,0 +1,43 @@
+project_id: R61MH138713
+
+project_title: >
+  Combining neural oscillations, physiology and privacy-preserving LiDAR/millimeter wave sensing technology to track attention states in natural contexts
+
+project_description: >
+  This project focuses on integrating neural oscillations, physiological signals, and
+  privacy-preserving LiDAR and millimeter-wave sensing technologies to track and model
+  attention states in real-world, naturalistic environments.
+
+ember_doi: ""
+
+data_availability_emberdandi: false
+data_availability_emberrestricted: false
+data_availability_embervault: false
+
+access_tier_summary: >
+  Data availability and access tiers have not yet been finalized for this project.
+
+access_level_emberdandisets: []
+access_level_restricted_datasets: []
+access_level_access_vault_ids: []
+
+data_administrator:
+  contributor_id: agatha.lenartowicz@ucla.edu
+  name: Agatha Lenartowicz
+  email: agatha.lenartowicz@ucla.edu
+  institution: University of California Los Angeles
+
+last_metadata_update: "2025-01-10T12:00:00Z"
+metadata_version: "0.1.0"
+
+related_publications: []
+related_repositories: []
+related_dandisets: []
+related_data: []
+
+funding:
+  - funding_institute: NIH
+    award_number: R61MH138713
+    award_title: >
+      Combining neural oscillations, physiology and privacy-preserving LiDAR/millimeter wave sensing technology to track attention states in natural contexts
+    funding_url: https://reporter.nih.gov/project-details/11037221
