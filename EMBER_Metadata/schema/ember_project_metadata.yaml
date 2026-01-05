@@ -1,7 +1,7 @@
 id: https://w3id.org/emberarchive/emberproject
 name: emberproject
 prefixes:
-  linkml: https://w3id.org/emberarchive/
+  linkml: https://w3id.org/linkml/
 imports:
   - linkml:types
 default_range: string
@@ -24,6 +24,17 @@ classes:
         required: true       ## must be supplied
         description: 
           text description of the project
+      
+      data_use_agreement:
+        required: false
+        description:
+          Description or reference to the data use agreement governing access to restricted or controlled data
+
+      data_use_agreement_required:
+        required: false
+        range: boolean
+        description:
+          Indicates whether a data use agreement is required to access any project data
 
       ember_doi:
         required: false
