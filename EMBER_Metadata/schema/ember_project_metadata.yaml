@@ -102,13 +102,14 @@ classes:
         required: true      ## must be supplied
         description: 
           version of the metadata
-      
+
       related_publications:
         multivalued: true
         inlined_as_list: true
+        range: Publication
         description:
-          DOIs for related publications
-      
+          Publications associated with this project
+
       related_repositories:
         multivalued: true
         inlined_as_list: true
@@ -178,3 +179,40 @@ classes:
       institution:
         required: false
         description: Institutional affiliation
+
+  Publication:
+    description: Scholarly publication associated with the project
+    attributes:
+
+      publication_doi:
+        required: false
+        any_of:
+          - range: string
+            pattern: "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$"
+          - range: string
+            equals_string: ""
+        description: DOI for the publication (empty string allowed if pending)
+
+      title:
+        required: true
+        description: Title of the publication
+
+      authors:
+        multivalued: true
+        required: true
+        range: Contributor
+        description: Authors of the publication (references to Contributor objects)
+
+      journal:
+        required: false
+        description: Journal or venue where the work was published
+
+      year:
+        required: false
+        range: integer
+        description: Year of publication
+
+      publication_url:
+        required: false
+        description: URL to the publication landing page or preprint
+
