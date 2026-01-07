@@ -24,6 +24,11 @@ classes:
         required: true       ## must be supplied
         description: 
           text description of the project
+
+      model_organisms:
+        multivalued: true
+        inlined_as_list: true
+        description: Model organisms used in this project (e.g., Mus musculus, Homo sapiens)
       
       data_use_agreement:
         required: false
@@ -139,6 +144,11 @@ classes:
     description: Funding source information for the project
     attributes:
 
+      start_date:
+        required: false
+        range: date
+        description: Start date of the funding award
+
       funding_institute:
         required: true
         description: Name of the funding institute (e.g., NIH, NSF, DARPA)
@@ -164,9 +174,14 @@ classes:
         identifier: true
         required: true
       
+      orcid:
+        required: false
+        pattern: "^https://orcid.org/\\d{4}-\\d{4}-\\d{4}-\\d{4}$"
+        description: ORCID identifier for the contributor
+
       external_identifiers:
         multivalued: true
-        description: External identifiers such as ORCID
+        description: External identifiers 
 
       name:
         required: true
@@ -179,6 +194,7 @@ classes:
       institution:
         required: false
         description: Institutional affiliation
+
 
   Publication:
     description: Scholarly publication associated with the project
