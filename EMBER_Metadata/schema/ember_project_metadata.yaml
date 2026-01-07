@@ -12,8 +12,15 @@ classes:
     tree_root: true
     attributes:
 
+      id:
+        description: Unique identifier
+        identifier: true
+        range: integer
+        required: true
+
       project_id:
-        identifier: true     ## unique key for project
+        description:
+          Human-readable Project identifier. Typically <PI_LastName><Year>
 
       project_title:
         required: true       ## title of the project
@@ -139,6 +146,12 @@ classes:
     description: Funding source information for the project
     attributes:
 
+      id:
+        description: Unique identifier
+        identifier: true
+        range: integer
+        required: true
+
       funding_institute:
         required: true
         description: Name of the funding institute (e.g., NIH, NSF, DARPA)
@@ -159,9 +172,10 @@ classes:
     description: Person or organization contributing to the project
     attributes:
 
-      contributor_id:
-        description: Internal identifier for the contributor within EMBER metadata
+      id:
+        description: Unique identifier for the contributor within EMBER metadata
         identifier: true
+        range: integer
         required: true
       
       external_identifiers:
@@ -183,6 +197,12 @@ classes:
   Publication:
     description: Scholarly publication associated with the project
     attributes:
+
+      id:
+        description: Unique identifier
+        identifier: true
+        range: integer
+        required: true
 
       publication_doi:
         required: false
