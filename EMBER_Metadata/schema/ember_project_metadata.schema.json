@@ -253,9 +253,8 @@
                 },
                 "end_year": {
                     "description": "End year of the funding award",
-                    "format": "date",
                     "type": [
-                        "string",
+                        "integer",
                         "null"
                     ]
                 },
@@ -272,8 +271,7 @@
                 },
                 "start_year": {
                     "description": "Start year of the funding award",
-                    "format": "date",
-                    "type": "string"
+                    "type": "integer"
                 }
             },
             "required": [

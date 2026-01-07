@@ -146,12 +146,12 @@ classes:
 
       start_year:
         required: true
-        range: date
+        range: integer
         description: Start year of the funding award
 
       end_year:
         required: false
-        range: date
+        range: integer
         description: End year of the funding award
 
       funding_institute:
