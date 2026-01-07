@@ -200,7 +200,8 @@ classes:
       authors:
         multivalued: true
         required: true
-        description: List of authors as they appear in the publication
+        range: Contributor
+        description: Authors of the publication (references to Contributor objects)
 
       journal:
         required: false
