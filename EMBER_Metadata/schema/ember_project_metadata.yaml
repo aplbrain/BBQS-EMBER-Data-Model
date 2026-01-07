@@ -106,8 +106,9 @@ classes:
       related_publications:
         multivalued: true
         inlined_as_list: true
+        range: Publication
         description:
-          DOIs for related publications
+          Publications associated with this project
 
       related_repositories:
         multivalued: true
