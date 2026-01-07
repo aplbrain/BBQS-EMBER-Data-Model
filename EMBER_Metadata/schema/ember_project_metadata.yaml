@@ -144,10 +144,15 @@ classes:
     description: Funding source information for the project
     attributes:
 
-      start_date:
+      start_year:
+        required: true
+        range: date
+        description: Start year of the funding award
+
+      end_year:
         required: false
         range: date
-        description: Start date of the funding award
+        description: End year of the funding award
 
       funding_institute:
         required: true

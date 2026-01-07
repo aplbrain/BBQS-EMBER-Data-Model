@@ -251,6 +251,14 @@
                         "null"
                     ]
                 },
+                "end_year": {
+                    "description": "End year of the funding award",
+                    "format": "date",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "funding_institute": {
                     "description": "Name of the funding institute (e.g., NIH, NSF, DARPA)",
                     "type": "string"
@@ -262,16 +270,14 @@
                         "null"
                     ]
                 },
-                "start_date": {
-                    "description": "Start date of the funding award",
+                "start_year": {
+                    "description": "Start year of the funding award",
                     "format": "date",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 }
             },
             "required": [
+                "start_year",
                 "funding_institute",
                 "award_number"
             ],
