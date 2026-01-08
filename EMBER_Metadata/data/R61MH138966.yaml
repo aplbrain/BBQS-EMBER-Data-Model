@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R61MH138966
 
 project_title: >
@@ -22,7 +23,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: christopher.rozell@ece.gatech.edu
+  id: 0  # Dummy Id
   name: Christopher John Rozell
   email: christopher.rozell@ece.gatech.edu
   institution: Georgia Institute of Technology
@@ -36,7 +37,8 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R61MH138966
     award_title: >
       A naturalistic multimodal platform for capturing brain-body interactions in people during physical effort-based decision making

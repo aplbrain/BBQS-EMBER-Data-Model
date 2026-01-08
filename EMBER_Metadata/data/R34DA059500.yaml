@@ -1,3 +1,20 @@
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0
+id: 0  # Dummy Id
 project_id: R34DA059500
 
 project_title: >
@@ -22,7 +39,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: david.schoppik@nyulangone.org
+  id: 0  # Dummy Id
   name: David Schoppik
   email: david.schoppik@nyulangone.org
   institution: New York University School of Medicine
@@ -36,7 +53,8 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R34DA059500
     award_title: >
       Transformative Optical Imaging of Brain & Behavior in Navigating Genetic Species

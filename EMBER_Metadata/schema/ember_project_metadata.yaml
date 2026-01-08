@@ -173,7 +173,7 @@ classes:
     attributes:
 
       id:
-        description: Unique identifier for the contributor within EMBER metadata
+        description: Unique identifier
         identifier: true
         range: integer
         required: true

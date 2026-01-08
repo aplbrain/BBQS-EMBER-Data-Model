@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R61MH138713
 
 project_title: >
@@ -22,7 +23,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: agatha.lenartowicz@ucla.edu
+  id: 0  # Dummy Id
   name: Agatha Lenartowicz
   email: agatha.lenartowicz@ucla.edu
   institution: University of California Los Angeles
@@ -36,7 +37,8 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R61MH138713
     award_title: >
       Combining neural oscillations, physiology and privacy-preserving LiDAR/millimeter wave sensing technology to track attention states in natural contexts
