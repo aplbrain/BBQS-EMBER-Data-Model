@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R34DA059512
 
 project_title: High-throughput, high-resolution 3D measurement of ethologically relevant rodent behavior in a dynamic environment
@@ -21,7 +22,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: timothy.dunn@duke.edu
+  id: 0  # Dummy Id
   name: Timothy William Dunn
   email: timothy.dunn@duke.edu
   institution: Duke University
@@ -35,7 +36,8 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R34DA059512
     award_title: High-throughput, high-resolution 3D measurement of ethologically relevant rodent behavior in a dynamic environment
     funding_url: https://reporter.nih.gov/project-details/10786883

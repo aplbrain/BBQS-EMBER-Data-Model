@@ -4,10 +4,6 @@
             "additionalProperties": false,
             "description": "Person or organization contributing to the project",
             "properties": {
-                "contributor_id": {
-                    "description": "Internal identifier for the contributor within EMBER metadata",
-                    "type": "string"
-                },
                 "email": {
                     "description": "Contact email address",
                     "type": [
@@ -25,6 +21,10 @@
                         "null"
                     ]
                 },
+                "id": {
+                    "description": "Unique identifier",
+                    "type": "integer"
+                },
                 "institution": {
                     "description": "Institutional affiliation",
                     "type": [
@@ -38,7 +38,7 @@
                 }
             },
             "required": [
-                "contributor_id",
+                "id",
                 "name"
             ],
             "title": "Contributor",
@@ -140,6 +140,10 @@
                         "null"
                     ]
                 },
+                "id": {
+                    "description": "Unique identifier",
+                    "type": "integer"
+                },
                 "last_metadata_update": {
                     "description": "date and time of last metadata update",
                     "type": "string"
@@ -153,6 +157,7 @@
                     "type": "string"
                 },
                 "project_id": {
+                    "description": "Human-readable Project identifier. Typically <PI_LastName><Year>",
                     "type": [
                         "string",
                         "null"
@@ -204,7 +209,7 @@
                 }
             },
             "required": [
-                "project_id",
+                "id",
                 "project_title",
                 "project_description",
                 "data_availability_emberdandi",
@@ -243,9 +248,14 @@
                         "string",
                         "null"
                     ]
+                },
+                "id": {
+                    "description": "Unique identifier",
+                    "type": "integer"
                 }
             },
             "required": [
+                "id",
                 "funding_institute",
                 "award_number"
             ],
@@ -259,9 +269,13 @@
                 "authors": {
                     "description": "Authors of the publication (references to Contributor objects)",
                     "items": {
-                        "type": "string"
+                        "type": "integer"
                     },
                     "type": "array"
+                },
+                "id": {
+                    "description": "Unique identifier",
+                    "type": "integer"
                 },
                 "journal": {
                     "description": "Journal or venue where the work was published",
@@ -307,6 +321,7 @@
                 }
             },
             "required": [
+                "id",
                 "title",
                 "authors"
             ],
@@ -412,6 +427,10 @@
                 "null"
             ]
         },
+        "id": {
+            "description": "Unique identifier",
+            "type": "integer"
+        },
         "last_metadata_update": {
             "description": "date and time of last metadata update",
             "type": "string"
@@ -425,6 +444,7 @@
             "type": "string"
         },
         "project_id": {
+            "description": "Human-readable Project identifier. Typically <PI_LastName><Year>",
             "type": [
                 "string",
                 "null"
@@ -476,7 +496,7 @@
         }
     },
     "required": [
-        "project_id",
+        "id",
         "project_title",
         "project_description",
         "data_availability_emberdandi",

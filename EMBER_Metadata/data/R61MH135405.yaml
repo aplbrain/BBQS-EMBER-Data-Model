@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R61MH135405
 
 project_title: >
@@ -23,7 +24,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: joshua.jacobs@columbia.edu
+  id: 0  # Dummy Id
   name: Joshua Jacobs
   email: joshua.jacobs@columbia.edu
   institution: Columbia University Health Sciences
@@ -37,7 +38,8 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R61MH135405
     award_title: >
       Developing the Context-Aware Multimodal Ecological Research and Assessment (CAMERA)

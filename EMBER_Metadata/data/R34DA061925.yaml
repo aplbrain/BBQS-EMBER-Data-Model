@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R34DA061925
 
 project_title: >
@@ -22,7 +23,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: shelly.flagel@umich.edu
+  id: 0  # Dummy Id
   name: Shelly Beth Flagel
   email: shelly.flagel@umich.edu
   institution: University of Michigan at Ann Arbor
@@ -36,7 +37,8 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R34DA061925
     award_title: >
       Building an “AI Forest” to identify the social and environmental factors underlying complex behavioral traits in wild primates

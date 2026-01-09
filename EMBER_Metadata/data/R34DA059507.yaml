@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R34DA059507
 
 project_title: Development of a "smart aviary" to probe neural dynamics of complex social behaviors in a gregarious songbird
@@ -21,7 +22,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: marcschm@sas.upenn.edu
+  id: 0  # Dummy Id
   name: Marc F Schmidt
   email: marcschm@sas.upenn.edu
   institution: University of Pennsylvania
@@ -35,7 +36,8 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R34DA059507
     award_title: Development of a "smart aviary" to probe neural dynamics of complex social behaviors in a gregarious songbird
     funding_url: https://reporter.nih.gov/project-details/10786687
