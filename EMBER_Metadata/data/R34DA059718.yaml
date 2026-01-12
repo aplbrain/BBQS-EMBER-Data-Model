@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R34DA059718
 
 project_title: Harnessing biological rhythms for a resilient social motif generator
@@ -21,7 +22,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: npadillacoreano@ufl.edu
+  id: 0  # Dummy Id
   name: Nancy Padilla Coreano
   email: npadillacoreano@ufl.edu
   institution: University of Florida
@@ -35,7 +36,9 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R34DA059718
     award_title: Harnessing biological rhythms for a resilient social motif generator
     funding_url: https://reporter.nih.gov/project-details/10797723
+    start_year: 2024

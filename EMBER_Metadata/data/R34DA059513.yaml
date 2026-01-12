@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R34DA059513
 
 project_title: Computational attribution and fusion of vocalizations, social behavior, and neural recordings in a naturalistic environment
@@ -21,7 +22,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: dhs1@nyu.edu
+  id: 0  # Dummy Id
   name: Dan Harvey Sanes
   email: dhs1@nyu.edu
   institution: New York University
@@ -35,7 +36,9 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R34DA059513
     award_title: Computational attribution and fusion of vocalizations, social behavior, and neural recordings in a naturalistic environment
     funding_url: https://reporter.nih.gov/project-details/10786899
+    start_year: 2024

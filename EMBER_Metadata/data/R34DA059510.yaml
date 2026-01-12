@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R34DA059510
 
 project_title: A modeling framework and arena for measuring contextual influences of behavior
@@ -20,7 +21,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: patrick.mcgrath@biology.gatech.edu
+  id: 0  # Dummy Id
   name: Patrick T McGrath
   email: patrick.mcgrath@biology.gatech.edu
   institution: Georgia Institute Of Technology
@@ -34,7 +35,9 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R34DA059510
     award_title: A modeling framework and arena for measuring contextual influences of behavior
     funding_url: https://reporter.nih.gov/project-details/10786801
+    start_year: 2024

@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R61MH135114
 
 project_title: >
@@ -22,7 +23,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: jwelshp@gmail.com
+  id: 0  # Dummy Id
   name: John P Welsh
   email: jwelshp@gmail.com
   institution: Seattle Children's Hospital
@@ -36,8 +37,10 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R61MH135114
     award_title: >
       Integrated Movement Tracking for Pediatric OPM-MEG Studies of Intellectual Disability
     funding_url: https://reporter.nih.gov/project-details/10792146
+    start_year: 2024

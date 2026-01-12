@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R61MH135407
 
 project_title: >
@@ -23,7 +24,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: shanechi@usc.edu
+  id: 0  # Dummy Id
   name: Maryam Shanechi
   email: shanechi@usc.edu
   institution: University of Southern California
@@ -37,9 +38,11 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R61MH135407
     award_title: >
       Novel multimodal neural, physiological, and behavioral sensing and machine learning
       for mental states
     funding_url: https://reporter.nih.gov/project-details/11017073
+    start_year: 2024

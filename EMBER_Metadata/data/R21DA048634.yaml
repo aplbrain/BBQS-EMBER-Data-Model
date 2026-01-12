@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R21DA048634
 
 project_title: >
@@ -22,7 +23,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: vivek.kumar@jax.org
+  id: 0  # Dummy Id
   name: Vivek Kumar
   email: vivek.kumar@jax.org
   institution: Jackson Laboratory
@@ -36,8 +37,10 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R21DA048634
     award_title: >
       Application of Machine Vision to Determine the Influence of Sleep States and Social Interactions on Vulnerability to Drug Addiction
     funding_url: https://reporter.nih.gov/project-details/9880430
+    start_year: 2019

@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R34DA059723
 
 project_title: Multimodal behavioral analysis of oromanual food-handling in freely moving animals
@@ -21,7 +22,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: g-shepherd@northwestern.edu
+  id: 0  # Dummy Id
   name: Gordon M Shepherd
   email: g-shepherd@northwestern.edu
   institution: Northwestern University
@@ -35,7 +36,9 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R34DA059723
     award_title: Multimodal behavioral analysis of oromanual food-handling in freely moving animals
     funding_url: https://reporter.nih.gov/project-details/10795435
+    start_year: 2024

@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R34DA059716
 
 project_title: Interpersonal behavioral synchrony in virtual and in-person dyadic conversation
@@ -22,7 +23,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: cheryl.corcoran@mssm.edu
+  id: 0  # Dummy Id
   name: Cheryl Mary Corcoran
   email: cheryl.corcoran@mssm.edu
   institution: Icahn School of Medicine at Mount Sinai
@@ -36,7 +37,9 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R34DA059716
     award_title: Interpersonal behavioral synchrony in virtual and in-person dyadic conversation
     funding_url: https://reporter.nih.gov/project-details/10797870
+    start_year: 2024

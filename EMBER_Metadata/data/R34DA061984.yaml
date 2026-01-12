@@ -1,3 +1,4 @@
+id: 0  # Dummy Id
 project_id: R34DA061984
 
 project_title: >
@@ -21,7 +22,7 @@ access_level_restricted_datasets: []
 access_level_access_vault_ids: []
 
 data_administrator:
-  contributor_id: mansi.srivastava@fas.harvard.edu
+  id: 0  # Dummy Id
   name: Mansi Srivastava
   email: mansi.srivastava@fas.harvard.edu
   institution: Harvard University
@@ -35,8 +36,10 @@ related_dandisets: []
 related_data: []
 
 funding:
-  - funding_institute: NIH
+  - id: 0  # Dummy Id
+    funding_institute: NIH
     award_number: R34DA061984
     award_title: >
       Quantifying organism-environment interactions in a new model system for neuroscience
     funding_url: https://reporter.nih.gov/project-details/11036699
+    start_year: 2025
