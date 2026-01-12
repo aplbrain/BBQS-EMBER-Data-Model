@@ -12,7 +12,7 @@
                     ]
                 },
                 "external_identifiers": {
-                    "description": "External identifiers such as ORCID",
+                    "description": "External identifiers",
                     "items": {
                         "type": "string"
                     },
@@ -35,6 +35,14 @@
                 "name": {
                     "description": "Full name of the contributor",
                     "type": "string"
+                },
+                "orcid": {
+                    "description": "ORCID identifier for the contributor",
+                    "pattern": "^https://orcid.org/\\d{4}-\\d{4}-\\d{4}-\\d{4}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -152,6 +160,16 @@
                     "description": "version of the metadata",
                     "type": "string"
                 },
+                "model_organisms": {
+                    "description": "Model organisms used in this project (e.g., Mus musculus, Homo sapiens)",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "project_description": {
                     "description": "text description of the project",
                     "type": "string"
@@ -238,6 +256,13 @@
                         "null"
                     ]
                 },
+                "end_year": {
+                    "description": "End year of the funding award",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
                 "funding_institute": {
                     "description": "Name of the funding institute (e.g., NIH, NSF, DARPA)",
                     "type": "string"
@@ -252,10 +277,15 @@
                 "id": {
                     "description": "Unique identifier",
                     "type": "integer"
+                },
+                "start_year": {
+                    "description": "Start year of the funding award",
+                    "type": "integer"
                 }
             },
             "required": [
                 "id",
+                "start_year",
                 "funding_institute",
                 "award_number"
             ],
@@ -438,6 +468,16 @@
         "metadata_version": {
             "description": "version of the metadata",
             "type": "string"
+        },
+        "model_organisms": {
+            "description": "Model organisms used in this project (e.g., Mus musculus, Homo sapiens)",
+            "items": {
+                "type": "string"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
         },
         "project_description": {
             "description": "text description of the project",
