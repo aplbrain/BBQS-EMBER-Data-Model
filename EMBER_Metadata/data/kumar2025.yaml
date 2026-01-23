@@ -11,6 +11,9 @@ project_description: >
 
 ember_doi: "10.60533/EMBER-2025-K2N5"
 
+model_organisms:
+  - Mus musculus
+
 data_availability_emberdandi: false
 data_availability_emberrestricted: false
 data_availability_embervault: false
@@ -63,7 +66,8 @@ related_publications:
 
 related_repositories: []
 related_dandisets: []
-related_data: []
+related_data:
+  - https://ember-open-data.s3.us-east-1.amazonaws.com/other/kumar2025/index.html
 
 funding:
   - id: 0  # Dummy Id
