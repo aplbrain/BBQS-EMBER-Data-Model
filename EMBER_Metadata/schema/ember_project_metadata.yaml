@@ -240,6 +240,7 @@ classes:
 
       authors:
         multivalued: true
+        inlined_as_list: true
         required: true
         range: Contributor
         description: Authors of the publication (references to Contributor objects)
