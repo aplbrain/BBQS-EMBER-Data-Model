@@ -13,7 +13,7 @@ ember_doi: ""
 model_organisms:
   - Mus musculus
 
-data_availability_emberdandi: false
+data_availability_emberdandi: true
 data_availability_emberrestricted: false
 data_availability_embervault: false
 
