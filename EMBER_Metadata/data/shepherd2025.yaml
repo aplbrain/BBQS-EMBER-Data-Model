@@ -1,0 +1,54 @@
+id: 0  # Dummy Id
+project_id: shepherd2025
+
+project_title: Multimodal behavioral analysis of oromanual food-handling in freely moving animals
+
+project_description: >
+  This project focuses on multimodal analysis of oromanual food-handling behaviors
+  in freely moving animals, integrating behavioral measurements to better understand
+  sensorimotor control during naturalistic feeding.
+
+ember_doi: ""
+
+model_organisms:
+  - Mus musculus
+
+data_availability_emberdandi: true
+data_availability_emberrestricted: false
+data_availability_embervault: false
+
+access_tier_summary: >
+  Data availability and access tiers have not yet been assigned.
+
+access_level_emberdandisets:
+  - EMBER-DANDI:000463
+access_level_restricted_datasets: []
+access_level_access_vault_ids: []
+
+data_administrator:
+  id: 0  # Dummy Id
+  name: Gordon M Shepherd
+  email: g-shepherd@northwestern.edu
+  institution: Northwestern University
+
+last_metadata_update: "2025-01-10T12:00:00Z"
+metadata_version: "0.1.0"
+
+related_publications: []
+related_repositories: []
+related_dandisets: []
+related_data: []
+
+funding:
+  - id: 0  # Dummy Id
+    funding_institute: NIH
+    award_number: R34DA059723
+    award_title: Multimodal behavioral analysis of oromanual food-handling in freely moving animals
+    funding_url: https://reporter.nih.gov/project-details/10795435
+    start_year: 2024
+  - id: 0  # Dummy Id
+    funding_institute: NIH
+    award_number: R37NS061963
+    award_title: Synaptic circuit organization of motor cortex
+    funding_url: https://reporter.nih.gov/project-details/10999422
+    start_year: 2025

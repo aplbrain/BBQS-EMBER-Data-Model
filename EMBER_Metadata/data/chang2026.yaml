@@ -1,11 +1,11 @@
 id: 0  # Dummy Id
-project_id: R34DA059510
+project_id: chang2026
 
-project_title: A modeling framework and arena for measuring contextual influences of behavior
+project_title: Toward comprehensive models of naturalistic cooperation and competition in primates
 
 project_description: >
-  This project develops a modeling framework and experimental arena to measure
-  how contextual factors influence behavior in naturalistic settings.
+  Project focused on modeling cooperation and competition in primates
+  using naturalistic behavioral paradigms.
 
 ember_doi: ""
 
@@ -22,9 +22,9 @@ access_level_access_vault_ids: []
 
 data_administrator:
   id: 0  # Dummy Id
-  name: Patrick T McGrath
-  email: patrick.mcgrath@biology.gatech.edu
-  institution: Georgia Institute Of Technology
+  name: Steve W C Chang
+  email: steve.chang@yale.edu
+  institution: Yale University
 
 last_metadata_update: "2025-01-10T12:00:00Z"
 metadata_version: "0.1.0"
@@ -37,7 +37,7 @@ related_data: []
 funding:
   - id: 0  # Dummy Id
     funding_institute: NIH
-    award_number: R34DA059510
-    award_title: A modeling framework and arena for measuring contextual influences of behavior
-    funding_url: https://reporter.nih.gov/project-details/10786801
-    start_year: 2024
+    award_number: U01DA063534
+    award_title: Toward comprehensive models of naturalistic cooperation and competition in primates
+    funding_url: ""
+    start_year: 2025

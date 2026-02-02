@@ -1,11 +1,12 @@
 id: 0  # Dummy Id
-project_id: U01DA051235
+project_id: srivastava2026
 
 project_title: >
-  Establishment and Characterization of Novel Mutant Mouse Models for the Addiction Research Community
+  Quantifying organism-environment interactions in a new model system for neuroscience
 
 project_description: >
-  This project focuses on establishing and characterizing novel mutant mouse models to support addiction research, providing standardized resources for the research community.
+  This project develops a new model system to quantify organism–environment interactions,
+  enabling systematic study of behavior and neural dynamics in naturalistic contexts.
 
 ember_doi: ""
 
@@ -22,9 +23,9 @@ access_level_access_vault_ids: []
 
 data_administrator:
   id: 0  # Dummy Id
-  name: Vivek Kumar
-  email: vivek.kumar@jax.org
-  institution: Jackson Laboratory
+  name: Mansi Srivastava
+  email: mansi.srivastava@fas.harvard.edu
+  institution: Harvard University
 
 last_metadata_update: "2025-01-10T12:00:00Z"
 metadata_version: "0.1.0"
@@ -37,8 +38,8 @@ related_data: []
 funding:
   - id: 0  # Dummy Id
     funding_institute: NIH
-    award_number: U01DA051235
+    award_number: R34DA061984
     award_title: >
-      Establishment and Characterization of Novel Mutant Mouse Models for the Addiction Research Community
-    funding_url: https://reporter.nih.gov/project-details/11140301
+      Quantifying organism-environment interactions in a new model system for neuroscience
+    funding_url: https://reporter.nih.gov/project-details/11036699
     start_year: 2025

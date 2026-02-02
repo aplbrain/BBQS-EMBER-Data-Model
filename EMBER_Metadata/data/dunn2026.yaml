@@ -1,12 +1,13 @@
 id: 0  # Dummy Id
-project_id: R34DA059506
+project_id: dunn2026
 
-project_title: High-resolution 3D tracking of social behaviors for deep phenotypic analysis
+project_title: High-throughput, High-resolution 3D measurement and tracking of rodent social behaviors
 
 project_description: >
-  This project focuses on high-resolution three-dimensional tracking of social
-  behaviors to enable deep phenotypic analysis across naturalistic behavioral
-  contexts.
+  This project focuses on high-throughput, high-resolution three-dimensional 
+  measurement approaches to quantify ethologically relevant rodent behavior in dynamic,
+  naturalistic environments, and tracking of social behaviors to enable deep phenotypic 
+  analysis across naturalistic behavioral contexts.
 
 ember_doi: ""
 
@@ -41,4 +42,10 @@ funding:
     award_number: R34DA059506
     award_title: High-resolution 3D tracking of social behaviors for deep phenotypic analysis
     funding_url: https://reporter.nih.gov/project-details/10786685
+    start_year: 2024
+  - id: 0  # Dummy Id
+    funding_institute: NIH
+    award_number: R34DA059512
+    award_title: High-throughput, high-resolution 3D measurement of ethologically relevant rodent behavior in a dynamic environment
+    funding_url: https://reporter.nih.gov/project-details/10786883
     start_year: 2024

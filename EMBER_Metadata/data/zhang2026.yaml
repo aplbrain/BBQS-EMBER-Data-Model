@@ -1,12 +1,13 @@
 id: 0  # Dummy Id
-project_id: R34DA061984
+project_id: zhang2026
 
 project_title: >
-  Quantifying organism-environment interactions in a new model system for neuroscience
+  Mapping dynamic transitions across neural, behavioral, and social scales in interacting animals
 
 project_description: >
-  This project develops a new model system to quantify organism–environment interactions,
-  enabling systematic study of behavior and neural dynamics in naturalistic contexts.
+  This project investigates how neural activity, behavior, and social interactions
+  dynamically transition across scales in interacting animals, with the goal of
+  developing integrative models of social behavior.
 
 ember_doi: ""
 
@@ -23,9 +24,9 @@ access_level_access_vault_ids: []
 
 data_administrator:
   id: 0  # Dummy Id
-  name: Mansi Srivastava
-  email: mansi.srivastava@fas.harvard.edu
-  institution: Harvard University
+  name: Mengsen Zhang
+  email: mengsen.zhang@msu.edu
+  institution: Michigan State University
 
 last_metadata_update: "2025-01-10T12:00:00Z"
 metadata_version: "0.1.0"
@@ -38,8 +39,9 @@ related_data: []
 funding:
   - id: 0  # Dummy Id
     funding_institute: NIH
-    award_number: R34DA061984
+    award_number: R34DA061924
     award_title: >
-      Quantifying organism-environment interactions in a new model system for neuroscience
-    funding_url: https://reporter.nih.gov/project-details/11036699
+      Mapping dynamic transitions across neural, behavioral, and social scales
+      in interacting animals
+    funding_url: https://reporter.nih.gov/project-details/11035335
     start_year: 2025

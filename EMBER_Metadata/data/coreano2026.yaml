@@ -1,12 +1,12 @@
 id: 0  # Dummy Id
-project_id: R34DA059723
+project_id: coreano2026
 
-project_title: Multimodal behavioral analysis of oromanual food-handling in freely moving animals
+project_title: Harnessing biological rhythms for a resilient social motif generator
 
 project_description: >
-  This project focuses on multimodal analysis of oromanual food-handling behaviors
-  in freely moving animals, integrating behavioral measurements to better understand
-  sensorimotor control during naturalistic feeding.
+  This project investigates how biological rhythms can be leveraged to build
+  resilient models of social motif generation, integrating neural and behavioral
+  measurements in naturalistic contexts.
 
 ember_doi: ""
 
@@ -23,9 +23,9 @@ access_level_access_vault_ids: []
 
 data_administrator:
   id: 0  # Dummy Id
-  name: Gordon M Shepherd
-  email: g-shepherd@northwestern.edu
-  institution: Northwestern University
+  name: Nancy Padilla Coreano
+  email: npadillacoreano@ufl.edu
+  institution: University of Florida
 
 last_metadata_update: "2025-01-10T12:00:00Z"
 metadata_version: "0.1.0"
@@ -38,7 +38,7 @@ related_data: []
 funding:
   - id: 0  # Dummy Id
     funding_institute: NIH
-    award_number: R34DA059723
-    award_title: Multimodal behavioral analysis of oromanual food-handling in freely moving animals
-    funding_url: https://reporter.nih.gov/project-details/10795435
+    award_number: R34DA059718
+    award_title: Harnessing biological rhythms for a resilient social motif generator
+    funding_url: https://reporter.nih.gov/project-details/10797723
     start_year: 2024
