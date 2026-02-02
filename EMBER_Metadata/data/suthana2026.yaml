@@ -1,12 +1,12 @@
 id: 0  # Dummy Id
-project_id: R34DA059512
+project_id: suthana2026
 
-project_title: High-throughput, high-resolution 3D measurement of ethologically relevant rodent behavior in a dynamic environment
+project_title: Synchronized neuronal and peripheral biomarker recordings in freely moving humans
 
 project_description: >
-  This project aims to develop high-throughput, high-resolution three-dimensional
-  measurement approaches to quantify ethologically relevant rodent behavior
-  in dynamic, naturalistic environments.
+  This project investigates synchronized neural and peripheral biomarker
+  recordings in freely moving humans to enable naturalistic studies of brain
+  and body dynamics.
 
 ember_doi: ""
 
@@ -23,8 +23,8 @@ access_level_access_vault_ids: []
 
 data_administrator:
   id: 0  # Dummy Id
-  name: Timothy William Dunn
-  email: timothy.dunn@duke.edu
+  name: Nanthia A Suthana
+  email: nanthia@duke.edu
   institution: Duke University
 
 last_metadata_update: "2025-01-10T12:00:00Z"
@@ -38,7 +38,7 @@ related_data: []
 funding:
   - id: 0  # Dummy Id
     funding_institute: NIH
-    award_number: R34DA059512
-    award_title: High-throughput, high-resolution 3D measurement of ethologically relevant rodent behavior in a dynamic environment
-    funding_url: https://reporter.nih.gov/project-details/10786883
+    award_number: R61MH135106
+    award_title: Synchronized neuronal and peripheral biomarker recordings in freely moving humans
+    funding_url: https://reporter.nih.gov/project-details/10792386
     start_year: 2024

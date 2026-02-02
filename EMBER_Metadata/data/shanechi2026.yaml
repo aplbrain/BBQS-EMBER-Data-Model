@@ -1,13 +1,14 @@
 id: 0  # Dummy Id
-project_id: R34DA061924
+project_id: shanechi2026
 
 project_title: >
-  Mapping dynamic transitions across neural, behavioral, and social scales in interacting animals
+  Novel multimodal neural, physiological, and behavioral sensing and machine learning
+  for mental states
 
 project_description: >
-  This project investigates how neural activity, behavior, and social interactions
-  dynamically transition across scales in interacting animals, with the goal of
-  developing integrative models of social behavior.
+  This project develops novel multimodal sensing approaches combined with machine
+  learning to characterize mental states using neural, physiological, and behavioral
+  data collected in naturalistic environments.
 
 ember_doi: ""
 
@@ -24,9 +25,9 @@ access_level_access_vault_ids: []
 
 data_administrator:
   id: 0  # Dummy Id
-  name: Mengsen Zhang
-  email: mengsen.zhang@msu.edu
-  institution: Michigan State University
+  name: Maryam Shanechi
+  email: shanechi@usc.edu
+  institution: University of Southern California
 
 last_metadata_update: "2025-01-10T12:00:00Z"
 metadata_version: "0.1.0"
@@ -39,9 +40,9 @@ related_data: []
 funding:
   - id: 0  # Dummy Id
     funding_institute: NIH
-    award_number: R34DA061924
+    award_number: R61MH135407
     award_title: >
-      Mapping dynamic transitions across neural, behavioral, and social scales
-      in interacting animals
-    funding_url: https://reporter.nih.gov/project-details/11035335
-    start_year: 2025
+      Novel multimodal neural, physiological, and behavioral sensing and machine learning
+      for mental states
+    funding_url: https://reporter.nih.gov/project-details/11017073
+    start_year: 2024

@@ -1,12 +1,11 @@
 id: 0  # Dummy Id
-project_id: R61MH135106
+project_id: chang2026
 
-project_title: Synchronized neuronal and peripheral biomarker recordings in freely moving humans
+project_title: Toward comprehensive models of naturalistic cooperation and competition in primates
 
 project_description: >
-  This project investigates synchronized neural and peripheral biomarker
-  recordings in freely moving humans to enable naturalistic studies of brain
-  and body dynamics.
+  Project focused on modeling cooperation and competition in primates
+  using naturalistic behavioral paradigms.
 
 ember_doi: ""
 
@@ -23,9 +22,9 @@ access_level_access_vault_ids: []
 
 data_administrator:
   id: 0  # Dummy Id
-  name: Nanthia A Suthana
-  email: nanthia@duke.edu
-  institution: Duke University
+  name: Steve W C Chang
+  email: steve.chang@yale.edu
+  institution: Yale University
 
 last_metadata_update: "2025-01-10T12:00:00Z"
 metadata_version: "0.1.0"
@@ -38,7 +37,7 @@ related_data: []
 funding:
   - id: 0  # Dummy Id
     funding_institute: NIH
-    award_number: R61MH135106
-    award_title: Synchronized neuronal and peripheral biomarker recordings in freely moving humans
-    funding_url: https://reporter.nih.gov/project-details/10792386
-    start_year: 2024
+    award_number: U01DA063534
+    award_title: Toward comprehensive models of naturalistic cooperation and competition in primates
+    funding_url: ""
+    start_year: 2025
