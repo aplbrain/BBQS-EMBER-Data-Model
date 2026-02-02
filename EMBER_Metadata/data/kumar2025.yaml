@@ -37,6 +37,36 @@ metadata_version: "0.1.0"
 
 related_publications:
   - id: 0  # Dummy Id
+    publication_doi: 10.1016/j.crmeth.2025.101242
+    title: Visual detection of seizures in mice using supervised machine learning
+    authors:
+      - id: 0  # Dummy Id
+        name: Gautam Sabnis
+        institution: Jackson Laboratory
+      - id: 0  # Dummy Id
+        name: Leinani Hession
+        institution: Jackson Laboratory
+      - id: 0  # Dummy Id
+        name: J. Matthew Mahoney
+        institution: Jackson Laboratory
+      - id: 0  # Dummy Id
+        name:  Arie Mobley
+        institution: Jackson Laboratory
+      - id: 0  # Dummy Id
+        name:  Marina Santos
+        institution: Jackson Laboratory
+      - id: 0  # Dummy Id
+        name: Brian Geuther
+        institution: Jackson Laboratory
+      - id: 0  # Dummy Id
+        orcid: https://orcid.org/0000-0001-6643-7465
+        name: Vivek Kumar
+        email: vivek.kumar@jax.org
+        institution: Jackson Laboratory
+    journal: Cell Reports Methods
+    year: 2025
+    publication_url: https://doi.org/10.1016/j.crmeth.2025.101242
+  - id: 0  # Dummy Id
     publication_doi: 10.1101/2024.05.29.596520
     title: Visual detection of seizures in mice using supervised machine learning
     authors:
