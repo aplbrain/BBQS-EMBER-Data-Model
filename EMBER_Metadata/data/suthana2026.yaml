@@ -10,6 +10,9 @@ project_description: >
 
 ember_doi: ""
 
+model_organisms:
+  - Homo sapiens
+
 data_availability_emberdandi: false
 data_availability_emberrestricted: false
 data_availability_embervault: false

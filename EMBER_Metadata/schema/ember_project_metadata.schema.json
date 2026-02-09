@@ -299,7 +299,7 @@
                 "authors": {
                     "description": "Authors of the publication (references to Contributor objects)",
                     "items": {
-                        "type": "integer"
+                        "$ref": "#/$defs/Contributor"
                     },
                     "type": "array"
                 },
@@ -317,7 +317,7 @@
                 "publication_doi": {
                     "anyOf": [
                         {
-                            "pattern": "^10\\.\\d{4,9}/[-._;()/:A-Z0-9]+$",
+                            "pattern": "^10\\.\\d{4,9}/[-._;()/:A-Za-z0-9]+$",
                             "type": "string"
                         },
                         {
