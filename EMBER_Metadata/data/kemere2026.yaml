@@ -12,6 +12,9 @@ project_description: >
 
 ember_doi: ""
 
+model_organisms:
+  - Ovis aries
+
 data_availability_emberdandi: false
 data_availability_emberrestricted: false
 data_availability_embervault: false
