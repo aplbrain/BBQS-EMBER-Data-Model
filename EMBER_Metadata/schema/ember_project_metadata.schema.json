@@ -152,6 +152,16 @@
                     "description": "Unique identifier",
                     "type": "integer"
                 },
+                "keywords": {
+                    "description": "Keywords associated with the project",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "last_metadata_update": {
                     "description": "date and time of last metadata update",
                     "type": "string"
@@ -163,7 +173,7 @@
                 "model_organisms": {
                     "description": "Model organisms used in this project (e.g., Mus musculus, Homo sapiens)",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/Taxonomy"
                     },
                     "type": [
                         "array",
@@ -224,12 +234,24 @@
                         "array",
                         "null"
                     ]
+                },
+                "website_content": {
+                    "description": "Custom content for the website project page",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "year": {
+                    "description": "Start year of the project",
+                    "type": "integer"
                 }
             },
             "required": [
                 "id",
                 "project_title",
                 "project_description",
+                "year",
                 "data_availability_emberdandi",
                 "data_availability_emberrestricted",
                 "data_availability_embervault",
@@ -357,6 +379,58 @@
             ],
             "title": "Publication",
             "type": "object"
+        },
+        "TaxonomicRank": {
+            "description": "",
+            "enum": [
+                "SPECIES",
+                "GENUS",
+                "DOMAIN"
+            ],
+            "title": "TaxonomicRank",
+            "type": "string"
+        },
+        "Taxonomy": {
+            "additionalProperties": false,
+            "description": "Organism taxonomy",
+            "properties": {
+                "common_name": {
+                    "description": "Common name",
+                    "type": "string"
+                },
+                "current_scientific_name": {
+                    "description": "Current scientific name",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Unique identifier",
+                    "type": "integer"
+                },
+                "image_source": {
+                    "description": "Image source path",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "rank": {
+                    "$ref": "#/$defs/TaxonomicRank",
+                    "description": "Taxonomic rank"
+                },
+                "taxonomy_id": {
+                    "description": "NCBI Taxonomy ID",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "id",
+                "taxonomy_id",
+                "rank",
+                "current_scientific_name",
+                "common_name"
+            ],
+            "title": "Taxonomy",
+            "type": "object"
         }
     },
     "$id": "https://w3id.org/emberarchive/emberproject",
@@ -461,6 +535,16 @@
             "description": "Unique identifier",
             "type": "integer"
         },
+        "keywords": {
+            "description": "Keywords associated with the project",
+            "items": {
+                "type": "string"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
         "last_metadata_update": {
             "description": "date and time of last metadata update",
             "type": "string"
@@ -472,7 +556,7 @@
         "model_organisms": {
             "description": "Model organisms used in this project (e.g., Mus musculus, Homo sapiens)",
             "items": {
-                "type": "string"
+                "$ref": "#/$defs/Taxonomy"
             },
             "type": [
                 "array",
@@ -533,12 +617,24 @@
                 "array",
                 "null"
             ]
+        },
+        "website_content": {
+            "description": "Custom content for the website project page",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "year": {
+            "description": "Start year of the project",
+            "type": "integer"
         }
     },
     "required": [
         "id",
         "project_title",
         "project_description",
+        "year",
         "data_availability_emberdandi",
         "data_availability_emberrestricted",
         "data_availability_embervault",

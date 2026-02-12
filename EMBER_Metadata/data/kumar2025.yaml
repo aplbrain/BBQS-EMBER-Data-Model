@@ -9,10 +9,19 @@ project_description: >
   interactions in animal models in order to understand their influence on vulnerability
   to drug addiction.
 
+year: 2025
+
+keywords: ["Seizure", "Epilepsy", "Machine Learning", "Computer Vision", "High Throughput", "Supervised Learning", "Mouse Models", "Open Field"]
+
 ember_doi: "10.60533/EMBER-2025-K2N5"
 
 model_organisms:
-  - Mus musculus
+  - id: 0  # Dummy Id
+    taxonomy_id: 10090
+    rank: SPECIES
+    current_scientific_name: Mus musculus
+    common_name: house mouse
+    image_source: https://ember-web-assets.s3.amazonaws.com/species/mouse.svg
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false
@@ -114,3 +123,6 @@ funding:
       Establishment and Characterization of Novel Mutant Mouse Models for the Addiction Research Community
     funding_url: https://reporter.nih.gov/project-details/11140301
     start_year: 2025
+
+website_content: >
+  **How to access the data**\n\n1. Install aws cli if not installed.\n2. Run the following in your terminal\n```bash\n# View contents of kumar2025\naws s3 ls s3://ember-open-data/other/kumar2025/\n\n# Copy specific file or whole directory\naws s3 cp s3://ember-open-data/other/kumar2025/<file> .\n```
