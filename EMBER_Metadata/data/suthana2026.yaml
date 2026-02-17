@@ -8,10 +8,19 @@ project_description: >
   recordings in freely moving humans to enable naturalistic studies of brain
   and body dynamics.
 
+year: 2026
+
+keywords: []
+
 ember_doi: ""
 
 model_organisms:
-  - Homo sapiens
+  - id: 0  # Dummy Id
+    taxonomy_id: 9606
+    rank: SPECIES
+    current_scientific_name: Homo sapiens
+    common_name: human
+    image_source: ""
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

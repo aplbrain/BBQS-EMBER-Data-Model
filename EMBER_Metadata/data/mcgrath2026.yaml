@@ -7,10 +7,19 @@ project_description: >
   This project develops a modeling framework and experimental arena to measure
   how contextual factors influence behavior in naturalistic settings.
 
+year: 2026
+
+keywords: []
+
 ember_doi: ""
 
 model_organisms:
-  - Cichlidae
+  - id: 0  # Dummy Id
+    taxonomy_id: 8113
+    rank: FAMILY
+    current_scientific_name: Cichlidae
+    common_name: cichlids
+    image_source: ""
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

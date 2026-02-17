@@ -9,10 +9,19 @@ project_description: >
   experience-dependent brain and behavioral development, with a focus on reproducibility,
   cross-site harmonization, and longitudinal developmental measures.
 
+year: 2026
+
+keywords: []
+
 ember_doi: ""
 
 model_organisms:
-  - Mus musculus
+  - id: 0  # Dummy Id
+    taxonomy_id: 10090
+    rank: SPECIES
+    current_scientific_name: Mus musculus
+    common_name: house mouse
+    image_source: https://ember-web-assets.s3.amazonaws.com/species/mouse.svg
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

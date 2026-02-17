@@ -8,10 +8,19 @@ project_description: >
   vocalizations, social behavior, and neural recordings collected in
   naturalistic environments.
 
+year: 2026
+
+keywords: []
+
 ember_doi: ""
 
 model_organisms:
-  - Meriones unguiculatus
+  - id: 0  # Dummy Id
+    taxonomy_id: 10047
+    rank: SPECIES
+    current_scientific_name: Meriones unguiculatus
+    common_name: Mongolian gerbil
+    image_source: ""
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

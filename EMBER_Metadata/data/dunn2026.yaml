@@ -9,11 +9,25 @@ project_description: >
   naturalistic environments, and tracking of social behaviors to enable deep phenotypic 
   analysis across naturalistic behavioral contexts.
 
+year: 2026
+
+keywords: []
+
 ember_doi: ""
 
 model_organisms:
-  - Mus musculus
-  - Rattus
+  - id: 0  # Dummy Id
+    taxonomy_id: 10090
+    rank: SPECIES
+    current_scientific_name: Mus musculus
+    common_name: house mouse
+    image_source: https://ember-web-assets.s3.amazonaws.com/species/mouse.svg
+  - id: 0  # Dummy Id
+    taxonomy_id: 10114
+    rank: GENUS
+    current_scientific_name: Rattus
+    common_name: rats
+    image_source: ""  
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

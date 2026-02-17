@@ -10,10 +10,19 @@ project_description: >
   approaches for studying complex social behaviors in sheep in naturalistic,
   field-based environments.
 
+year: 2026
+
+keywords: []
+
 ember_doi: ""
 
 model_organisms:
-  - Ovis aries
+  - id: 0  # Dummy Id
+    taxonomy_id: 9940
+    rank: SPECIES
+    current_scientific_name: Ovis aries
+    common_name: sheep
+    image_source: ""
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

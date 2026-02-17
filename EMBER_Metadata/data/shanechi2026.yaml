@@ -10,10 +10,19 @@ project_description: >
   learning to characterize mental states using neural, physiological, and behavioral
   data collected in naturalistic environments.
 
+year: 2026
+
+keywords: []
+
 ember_doi: ""
 
 model_organisms:
-  - Homo sapiens
+  - id: 0  # Dummy Id
+    taxonomy_id: 9606
+    rank: SPECIES
+    current_scientific_name: Homo sapiens
+    common_name: human
+    image_source: ""
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false

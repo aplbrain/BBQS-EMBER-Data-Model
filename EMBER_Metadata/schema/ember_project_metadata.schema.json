@@ -385,7 +385,7 @@
             "enum": [
                 "SPECIES",
                 "GENUS",
-                "DOMAIN"
+                "FAMILY"
             ],
             "title": "TaxonomicRank",
             "type": "string"

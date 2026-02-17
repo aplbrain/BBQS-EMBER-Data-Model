@@ -9,10 +9,19 @@ project_description: >
   dynamically transition across scales in interacting animals, with the goal of
   developing integrative models of social behavior.
 
+year: 2026
+
+keywords: []
+
 ember_doi: ""
 
 model_organisms:
-  - Mustela putorius
+  - id: 0  # Dummy Id
+    taxonomy_id: 9668
+    rank: SPECIES
+    current_scientific_name: Mustela putorius
+    common_name: European polecat
+    image_source: ""
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false
