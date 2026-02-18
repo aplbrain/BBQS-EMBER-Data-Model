@@ -8,10 +8,19 @@ project_description: >
   dynamics underlying complex social behaviors in gregarious songbirds
   using multimodal sensing and computational analysis.
 
+year: 2026
+
+keywords: []
+
 ember_doi: ""
 
 model_organisms:
-  - Molothrus
+  - id: 0  # Dummy Id
+    taxonomy_id: 84832
+    rank: GENUS
+    current_scientific_name: Molothrus
+    common_name: ""
+    image_source: ""
 
 data_availability_emberdandi: false
 data_availability_emberrestricted: false
