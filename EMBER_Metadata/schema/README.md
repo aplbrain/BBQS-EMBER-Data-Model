@@ -57,3 +57,9 @@ Check that the file was created:
 ```
 ls -lh ember_project_metadata.schema.json
 ```
+
+## Generate Mermaid diagrams
+
+```
+gen-erdiagram schema/ember_project_metadata.yaml > schema/ember_project_metadata.md
+```
